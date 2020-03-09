@@ -121,6 +121,54 @@ let products = [
         bestPrice: 2999.99,
         inCart: 0
     },
+    {
+        status: 'Em estoque',
+        image: '../images/image-home-poltron01.png',
+        name: 'Poltrona Adelle Nude',
+        oldPrice: 799.99,
+        bestPrice: 599.99,
+        inCart: 0
+    },
+    {
+        status: 'Em estoque',
+        image: '../images/image-home-poltron02.png',
+        name: 'Poltrona Holly Nude',
+        oldPrice: 899.99,
+        bestPrice: 799.99,
+        inCart: 0
+    },
+    {
+        status: 'Em estoque',
+        image: '../images/image-home-poltron03.png',
+        name: 'Poltrona Tulipa Nude',
+        oldPrice: 599.99,
+        bestPrice: 499.99,
+        inCart: 0
+    },
+    {
+        status: 'Em estoque',
+        image: '../images/image-home-poltron04.png',
+        name: 'Poltrona Ono Nude',
+        oldPrice: 699.99,
+        bestPrice: 499.99,
+        inCart: 0
+    },
+    {
+        status: 'Em estoque',
+        image: '../images/image-home-poltron05.png',
+        name: 'Poltrona Savona Nude',
+        oldPrice: 599.99,
+        bestPrice: 499.99,
+        inCart: 0
+    },
+    {
+        status: 'Em estoque',
+        image: '../images/image-home-poltron06.png',
+        name: 'Poltrona Miss Nude',
+        oldPrice: 899.99,
+        bestPrice: 799.99,
+        inCart: 0
+    },
 ];
 
 //Loop to create cart quantity in click function
