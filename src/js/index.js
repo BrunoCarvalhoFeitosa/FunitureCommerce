@@ -85,7 +85,7 @@ input.addEventListener("focusin", () => {
 let buttonBuy = document.querySelectorAll(".add-to-cart");
 let buttonCart = document.querySelector("#cart");
 
-buttonCart.addEventListener("mouseenter", () => {
+buttonCart.addEventListener("click", () => {
     document.querySelector(".b-header-container__minicart").classList.add("is--active-minicart");
 });
 
