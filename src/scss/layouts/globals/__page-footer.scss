@@ -1,0 +1,61 @@
+@import "./__mixins";
+@import "./__colors";
+@import "./_fonts";
+
+.b-footer-container {
+    width: 100%;
+    @include px-for-rem(30, padding-top);
+    background: $white;
+    &__institucional {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-item {
+            ul {
+                h6 {
+                    @include px-for-rem(0, margin-top);
+                    @include px-for-rem(14, margin-bottom);
+                    font-family: 'Roboto', sans-serif;
+                    @include px-for-rem(14, font-size);
+                    font-weight: 600;
+                    color: $black-medium;
+                }
+                li {
+                    @include px-for-rem(6, margin-bottom);
+                    a {
+                        font-family: 'Roboto', sans-serif;
+                        @include px-for-rem(14, font-size);
+                        font-weight: lighter;
+                        text-decoration: none;
+                        color: $black-medium;
+                        &:hover {
+                            color: $beige;
+                        }
+                    }
+                    &:hover {
+                        @include transform(translateX(10px));
+                        @include transition(.7s transform);
+                    }
+                }
+            }
+        }
+    }
+    &__brand {
+        border-top: 1px solid $gray-border;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        h6 {
+            a {
+                font-family: 'Simonetta', cursive;
+                @include px-for-rem(22, font-size);
+                font-weight: bold;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: $black-medium;
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+@import "./layouts/globals/_globals";
+@import "./layouts/globals/_mixins";
+@import "./layouts/globals/_colors";
+@import "./layouts/globals/_fonts";
+
+.b-register {
+    width: 100%;
+    height: 100vh;
+    background: $ice;
+    img {
+        height: 98%;
+        @include filter(drop-shadow(.375rem 1rem .375rem $black-medium));
+    }
+    &-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__form {
+            position: absolute;
+            top: 50%;
+            @include transform(translateY(-50%));
+            &-flex {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &__group {
+                    position: relative;
+                    @include px-for-rem(15, margin-bottom);
+                    label {
+                        position: absolute;
+                        @include px-for-rem(-8, top);
+                        @include px-for-rem(10, left);
+                        font-family: 'Roboto', sans-serif;
+                        @include px-for-rem(12, font-size);
+                        color: $gray;
+                    }
+                    input {
+                        @include px-for-rem(10, margin);
+                        @include px-for-rem(300, width);
+                        border: none;
+                        outline: none;
+                        background: transparent;
+                        @include px-for-rem(10, padding);
+                        box-sizing: border-box;
+                        box-shadow: -.25rem -.25rem .625rem rgba(255, 255, 255, 1),
+                                    inset .25rem .25rem .625rem rgba(0, 0, 0, 0.05),
+                                    inset -.25rem -.25rem .625rem rgba(255, 255, 255, 1),
+                                    .25rem .25rem .625rem rgba(0, 0, 0, 0.05);
+                        font-family: 'Roboto', sans-serif;
+                        @include px-for-rem(14, font-size);
+                        color: $black-medium;
+                    }
+                    button {
+                        @include px-for-rem(200, width);
+                        @include px-for-rem(40, height);
+                        border: none;
+                        background: $beige;
+                        font-family: 'Roboto', sans-serif;
+                        @include px-for-rem(12, font-size);
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        @include px-for-rem(1, letter-spacing);
+                        color: $black-medium;
+                        box-shadow: -.25rem -.25rem .625rem rgba(255, 255, 255, 1),
+                                    inset .25rem .25rem .625rem rgba(0, 0, 0, 0.05),
+                                    inset -.25rem -.25rem .625rem rgba(255, 255, 255, 1),
+                                    .25rem .25rem .625rem rgba(0, 0, 0, 0.05);
+                        cursor: pointer;
+                        &:hover {
+                            transition: 0.4s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,316 @@
+.b-header-container {
+    width: 100%;
+    height: auto;
+
+    &__institucional {
+        width: 100%;
+        @include px-for-rem(40, height);
+        background: $ice;
+        nav {
+            ul {
+                display: flex;
+                float: right;
+                margin: 0;
+                @include transform(translateY(10px));
+                li {
+                    margin: 0 .625rem;
+                    &:nth-child(1) {
+                        svg {
+                            width: 20px;
+                            height: 20px; 
+                        }
+                    }
+                    &:nth-child(2) {
+                        svg {
+                            width: 19px;
+                            height: 19px; 
+                        }
+                    }
+                    &:nth-child(3) {
+                        svg {
+                            width: 17px;
+                            height: 17px; 
+                        }
+                    }
+                    &:nth-child(4) {
+                        svg {
+                            width: 19px;
+                            height: 19px;
+                            @include transform(translateY(-2px));
+                        }
+                        span.b-qtd-cart {
+                            background: #B39F98;
+                            padding: 0 .25rem;
+                            font-family: 'Roboto', sans-serif;
+                            @include px-for-rem(11, font-size);
+                            font-weight: bold;
+                            color: #fff;
+                            position: relative;
+                        }
+                    }
+                    svg {
+                        fill: $gray;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    &__search {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        @include transform(translateY(-240px));
+        @include px-for-rem(240, height);
+        background: $white-light;
+        &-content {
+            form {
+                @include px-for-rem(20, margin-top);
+                display: flex;
+                justify-content: center;
+                input {
+                    border: none;
+                    outline: none;
+                    width: 25%;
+                    @include px-for-rem(12, padding);
+                }
+                button {
+                    background: $beige;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                }
+            }
+            &__more-search {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                ol {
+                    h5 {
+                        margin: 0;
+                        font-family: 'Simonetta', sans-serif;
+                        @include px-for-rem(20, font-size);
+                        text-transform: uppercase;
+                        color: $gray;
+                    }
+                    li {
+                        font-family: 'Roboto', sans-serif;
+                        @include px-for-rem(14, font-size);
+                        color: $black-medium;
+                    }
+                }
+            }
+        }
+    }
+
+    &__minicart {
+        position: fixed;
+        top: 0;
+        right: 0;
+        @include px-for-rem(400, width);
+        @include transform(translateX(400px));
+        height: 100%;
+        background: $white;
+        box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.3);
+        z-index: 99;
+        &-content {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            &__title {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                &-bag {
+                    > h3 {
+                        @include px-for-rem(12, margin-left);
+                        font-family: 'Roboto', sans-serif;
+                        @include px-for-rem(16, font-size);
+                        font-weight: lighter;
+                        color: $black-medium;
+                        > strong {
+                            font-weight: lighter;
+                            color: $beige;
+                        }
+                    }
+                }
+                &-close {
+                    > h3 {
+                        @include px-for-rem(12, margin-right);
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: lighter;
+                        @include px-for-rem(16, font-size);
+                        color: $black-medium;
+                        cursor: pointer;
+                    }
+                }
+            }
+            &__products {
+                width: 100%;
+                height: 78vh;
+                min-height: 78vh;
+                overflow-y: scroll;
+                &-content {
+                    display: flex;
+                    justify-content: space-between;
+                    @include px-for-rem(60, margin-top);
+                    width: 100%;
+                    height: auto;
+                    &__image {
+                        opacity: 0;
+                        visibility: hidden;
+                        @include px-for-rem(12, margin-left);
+                        @include px-for-rem(70, width);
+                        background: $ice;
+                        img {
+                            width: 100%;
+                            cursor: pointer;
+                        }
+                    }
+                    &__name {
+                        > h4 {
+                            font-family: 'Roboto', sans-serif;
+                            @include px-for-rem(14, font-size);
+                            font-weight: lighter;
+                            color: $black-medium;
+                        }
+                    }
+                    &__price {
+                        > h4 {
+                            font-family: 'Roboto', sans-serif;
+                            @include px-for-rem(14, font-size);
+                            font-weight: lighter;
+                            color: $gray-light;
+                        }
+                    }
+                }
+            }
+            &__cost {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                &-title {
+                    > h3 {
+                        @include px-for-rem(12, margin-left);
+                        font-family: 'Roboto', sans-serif;
+                        @include px-for-rem(16, font-size);
+                        color: $black-medium;
+                    }
+                }
+                &-price {
+                    > h3 {
+                        @include px-for-rem(12, margin-right);
+                        font-family: 'Roboto', sans-serif;
+                        @include px-for-rem(16, font-size);
+                        color: $black-medium;
+                    }
+                }
+            }
+            &__continue {
+                display: flex;
+                justify-content: center;
+                @include px-for-rem(10, padding);
+                width: 100%;
+                > a {
+                    font-family: 'Roboto', sans-serif;
+                    @include px-for-rem(12, font-size);
+                    text-align: center;
+                    color: $black-medium;
+                    cursor: pointer;
+                }
+            }
+            &__buy {
+                display: flex;
+                justify-content: center;
+                @include px-for-rem(16, padding);
+                width: 100%;
+                background: $beige;
+                cursor: pointer;
+                > button {
+                    width: 100%;
+                    height: 100%;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    text-align: center;
+                    font-family: 'Roboto', sans-serif;
+                    @include px-for-rem(14, font-size);
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    @include px-for-rem(3, letter-spacing);
+                    color: $white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &__departments {
+        width: 100%;
+        @include px-for-rem(164, height);
+        background: $white;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        
+        > div {
+            display: flex;
+            justify-content: center;
+            nav {
+                ul {
+                    display: flex;
+                    li {
+                        margin: 0 .925rem;
+                        a {
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 16px;
+                            text-decoration: none;
+                            color: $gray;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-brand {
+            a {
+                @include transform(translateY(6px));
+                font-family: 'Simonetta', sans-serif;
+                font-size: 26px;
+                font-weight: bold;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: $black-medium;
+            }
+        }
+
+        &-menu {
+            nav {
+                ul {
+                    li {
+                        &:first-of-type {
+                            a {
+                                font-weight: bold;
+                                color: $beige;
+                                &::after {
+                                    content: "";
+                                    display: block;
+                                    @include transform(translateY(-2px));
+                                    width: 120%;
+                                    height: 8px;
+                                    background: $beige;
+                                }
+                            }
+                        }
+                        a {
+                            &:hover {
+                                color: $beige;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

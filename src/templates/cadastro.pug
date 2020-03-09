@@ -1,0 +1,52 @@
+doctype html
+html(lang="pt-br")
+    head
+        meta(charset="UTF-8")/
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")/
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")/
+        meta(name="author", content="Bruno Carvalho Feitosa")/
+        meta(name="description", content="Cadastre-se no E-commerce Tok D'Art e tenha acesso às melhores promoções de venda de móveis para sala, cozinha e quarto")/
+        meta(name="keywords", content="Cadastre-se, E-commerce, Tok D'Art, Melhores promoções, venda, móveis, sala, cozinha, quarto")/
+        link(rel="stylesheet", type="text/css", href="css/cadastro.css")/
+        link(rel="icon", type="image/png", href="")/
+        title Cadastre-se na Tok D'Art e compro móveis com descontos especiais
+    body
+
+    section.b-register
+        img(src="../images/image-home-decoration.png")/
+        div.b-register-container
+            form.b-register-container__form
+                div.b-register-container__form-flex
+                    div.b-register-container__form-flex__group
+                        label(for="name") Nome
+                        input(type="text", id="name", class="form-input", required="required")/
+                    div.b-register-container__form-flex__group
+                        label(for="surname") Sobrenome
+                        input(type="text", id="surname", class="form-input", required="required")/
+                div.b-register-container__form-flex
+                    div.b-register-container__form-flex__group
+                        label(for="sexo") Sexo
+                        input(type="text", id="sexo", class="form-input", required="required")/
+                    div.b-register-container__form-flex__group
+                        label(for="cpf") CPF
+                        input(type="text", id="cpf", class="form-input", required="required")/
+                div.b-register-container__form-flex
+                    div.b-register-container__form-flex__group
+                        label(for="birthdayDate") Data de Nascimento
+                        input(type="text", id="birthdayDate", class="form-input", required="required")/
+                    div.b-register-container__form-flex__group
+                        label(for="email") E-mail
+                        input(type="email", id="email", class="form-input", required="required")/
+                div.b-register-container__form-flex
+                    div.b-register-container__form-flex__group
+                        label(for="password") Senha
+                        input(type="password", id="password", class="form-input", required="required")/
+                    div.b-register-container__form-flex__group
+                        label(for="passwordEqual") Confirmação de Senha
+                        input(type="password", id="passwordEqual", class="form-input", required="required")/
+                div.b-register-container__form-flex
+                    div.b-register-container__form-flex__group
+                        button(type="submit") Cadastrar-me
+
+    script(src="../js/cadastro.js")
+            
