@@ -1,7 +1,6 @@
 @import "./__mixins";
 @import "./__colors";
 @import "./_fonts";
-
 .b-footer-container {
     width: 100%;
     @include px-for-rem(30, padding-top);

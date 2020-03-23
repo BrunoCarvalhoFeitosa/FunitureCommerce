@@ -1,0 +1,142 @@
+@import "./layouts/globals/_globals";
+@import "./layouts/globals/_fonts";
+@import "./layouts/globals/_mixins";
+@import "./layouts/globals/__colors";
+@import "./layouts/globals/__page-header";
+@import "./layouts/globals/__page-footer";
+
+.b-cart-content {
+    @include transform(translateY(-4rem));
+    margin: 0 auto;
+    width: 80%;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $gray-lighter;
+        > h4 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            text-align: center;
+            color: $black-medium;
+            &:nth-child(2) {
+                @include transform(translateX(.625rem));
+            }
+            &:nth-child(3) {
+                @include transform(translateX(.875rem));
+            }
+        }
+    }
+    &__title {
+        width: 100%;
+        @include px-for-rem(50, height);
+        > h2 {
+            font-family: 'Simonetta', sans-serif;
+            @include px-for-rem(26, font-size);
+            text-transform: uppercase;
+            color: $gray-lighter;
+        }
+    }
+    &__products {
+        @include px-for-rem(24, margin-top);
+        width: 100%;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        @include px-for-rem(14, font-size);
+        color: $black-medium;
+        &-product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include px-for-rem(54, margin-bottom);
+            &__image {
+                @include px-for-rem(200, width);
+                @include px-for-rem(130, height);
+                background: $ice;
+                > img {
+                    width: 100%;
+                    @include px-for-rem(122, height);
+                    cursor: pointer;
+                    &:hover {
+                        @include transform(scale(1.035));
+                        @include transition(transform .2s ease-in);
+                    }
+                }
+                &-name {
+                    p {
+                        @include px-for-rem(14, font-size);
+                    }
+                }
+            }
+            &__price {
+                width: 19%;
+            }
+            &__quantity {
+                width: 13%;
+                > span {
+                    @include px-for-rem(5, margin-right);
+                    &:nth-child(1) {
+                        @include px-for-rem(28, font-size);
+                        font-weight: bold;
+                        color: $beige;
+                        cursor: pointer;
+                    }
+                    &:nth-child(2) {
+                        position: relative;
+                        @include px-for-rem(2, bottom);
+                    }
+                    &:nth-child(3) {
+                        @include px-for-rem(22, font-size);
+                        font-weight: bold;
+                        color: $beige;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        &-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            &__text {
+                p {
+                    font-weight: bold;
+                }
+            }
+            &__finally {
+                button {
+                    padding: .625rem 2.875rem;
+                    background: $beige;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    @include px-for-rem(1, letter-spacing);
+                    color: $white;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: .92;
+                    }
+                }
+            }
+            &__subtotal {
+                h3.summary-title {
+                    float: right;
+                    @include px-for-rem(24, font-size);
+                    @include px-for-rem(0, line-height);
+                }
+
+                h3.summary-subtotal {
+                    font-family: 'Simonetta', sans-serif;
+                    @include px-for-rem(20, font-size);
+                    color: $beige;
+                     span {
+                        position: relative;
+                        @include px-for-rem(6, top);
+                        @include px-for-rem(32, font-size);
+                        @include px-for-rem(14, line-height);
+                    }
+                }
+            }
+        }
+    }
+}

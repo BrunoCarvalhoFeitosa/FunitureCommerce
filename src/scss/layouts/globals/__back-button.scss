@@ -1,0 +1,27 @@
+@import "./layouts/globals/_globals";
+@import "./layouts/globals/_fonts";
+@import "./layouts/globals/_mixins";
+@import "./layouts/globals/__colors";
+.b-backbutton {
+    position: fixed;
+    @include px-for-rem(22, right);
+    @include px-for-rem(-64, bottom);
+    button {
+        @include px-for-rem(8, padding);
+        background: $beige;
+        cursor: pointer;
+        > a {
+            &::before {
+                content: "";
+                display: inline-block;
+                position: relative;
+                top: 8px;
+                width: 20px;
+                height: 20px;
+                border-top: 2px solid $white;
+                border-right: 2px solid $white;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}

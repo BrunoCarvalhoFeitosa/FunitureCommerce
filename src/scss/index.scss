@@ -2,6 +2,7 @@
 @import "./layouts/globals/_fonts";
 @import "./layouts/globals/_mixins";
 @import "./layouts/globals/__colors";
+@import "./layouts/globals/__back-button";
 @import "./layouts/globals/__page-header";
 @import "./layouts/globals/__page-footer";
 
@@ -11,11 +12,11 @@
     .b-image-decoration {
         position: absolute;
         @include px-for-rem(35, top);
-        @include px-for-rem(-18, left);
+        @include px-for-rem(0, left);
         @include filter(drop-shadow(.375rem 1rem .375rem $black-medium));
+        @include animation(animationFloat 2.56s infinite);
         z-index: 9;
     }
-
     &__slider {
         position: relative;
         display: flex;
@@ -23,7 +24,7 @@
         z-index: 1;
         width: 100%;
         &-controls {
-            width: 8%;
+            width: 11%;
             height: auto;
             @include transform(translateY(70px));
             background: $ice;
@@ -43,11 +44,11 @@
                     h2 {
                         margin: 1.25rem 0;
                         font-family: 'Simonetta', sans-serif;
-                        @include px-for-rem(50, font-size);
+                        @include px-for-rem(60, font-size);
                         text-transform: uppercase;
                         @include px-for-rem(2, letter-spacing);
                         font-weight: bold;
-                        @include px-for-rem(50, line-height);
+                        @include px-for-rem(70, line-height);
                         text-align: end;
                         color: $black-medium;
                     }
@@ -60,7 +61,6 @@
                     }
                 }
             }
-
             &__image {
                 width: 50%;
                 height: auto;
@@ -79,12 +79,11 @@
                     top: 50%;
                     @include transform(translateY(-50%));
                 }
-
                 &-mini-slider {
                     position: absolute;
                     @include px-for-rem(-68, bottom);
                     @include px-for-rem(2, right);
-                    width: 16%;
+                    width: 18%;
                     height: auto;
                     &__product {
                         width: 100%;
@@ -116,7 +115,7 @@
                                     font-family: 'Playfair Display', sans-serif;
                                     font-size: .75rem;
                                     font-weight: bold;
-                                        text-transform: uppercase;
+                                    text-transform: uppercase;
                                     text-align: center;
                                     line-height: 0;
                                     color: $black;
@@ -141,7 +140,6 @@
                             color: $gray-lighter;
                             cursor: pointer;
                         }
-
                         &-next {
                             transition: 0.5s;
                             svg {
@@ -167,11 +165,10 @@
             background: $white;
         }
     }
-
     &__promotion-cards {
         float: right;
         @include transform(translateY(-6.25rem));
-        width: 92%;
+        width: 89%;
         @include px-for-rem(500, height);
         background: #fff;
         &-container {
@@ -181,7 +178,6 @@
             margin: 7.4375rem 4rem;
         }
     }
-
     &__shelf {
         @include px-for-rem(80, padding-bottom);
         width: 100%;
@@ -199,6 +195,11 @@
                     margin: 0 .625rem;
                     width: 33.3%;
                     background: #f5f5f5;
+                    &:hover {
+                        @include transform(translateY(-.8000rem));
+                        @include transition(.5s transform);
+                        @include filter(drop-shadow(.155rem 0rem .155rem $beige));
+                    }
                     &__image {
                         width: 100%;
                         img {
@@ -206,7 +207,7 @@
                             cursor: pointer;
                             &:hover {
                                 @include transform(scale(1.035));
-                                @include transition(transform .2s ease-in)
+                                @include transition(transform .2s ease-in);
                             }
                         }
                     }
@@ -250,7 +251,7 @@
                             @include px-for-rem(20, right);
                             @include px-for-rem(32, bottom);
                             @include px-for-rem(120, width);
-                            @include px-for-rem(22, height);
+                            @include px-for-rem(34, height);
                             background: $beige;
                             box-shadow: .1875rem .1875rem .1875rem 0 rgba(0, 0, 0, 0.3);
                             font-family: 'Roboto', sans-serif;
@@ -268,7 +269,6 @@
             }
         }
     }
-
     &__off {
         width: 100%;
         height: auto;
@@ -276,7 +276,7 @@
         &-product-container {
             display: flex;
             width: 100%;
-            height: 300px;
+            @include px-for-rem(300, height);
             background: #fff;
             &__text {
                 display: flex;
@@ -288,7 +288,7 @@
                 &-content {
                     h3 {
                         font-family: 'Simonetta', sans-serif;
-                        @include px-for-rem(50, font-size);
+                        @include px-for-rem(60, font-size);
                         font-weight: bold;
                         text-transform: uppercase;
                         text-align: center;
@@ -302,7 +302,6 @@
                         font-weight: lighter;
                         line-height: 0;
                         color: $black-medium;
-
                         > strong {
                             font-family: 'Simonetta', sans-serif;
                             text-transform: uppercase;
@@ -331,6 +330,7 @@
                     @include px-for-rem(230, padding-top);
                     @include px-for-rem(80, padding-bottom);
                     &__row {
+                        margin: 0.3rem 0;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -339,6 +339,11 @@
                             margin: .625rem;
                             width: 33.3%;
                             background: $white;
+                            &:hover {
+                                @include transform(translateY(-.8000rem));
+                                @include transition(.7s transform);
+                                @include filter(drop-shadow(.155rem 0rem .155rem $beige));
+                            }
                             &__image {
                                 width: 100%;
                                 > img {
@@ -390,7 +395,7 @@
                                     @include px-for-rem(20, right);
                                     @include px-for-rem(32, bottom);
                                     @include px-for-rem(120, width);
-                                    @include px-for-rem(22, height);
+                                    @include px-for-rem(34, height);
                                     background: $beige;
                                     box-shadow: .1875rem .1875rem .1875rem 0 rgba(0, 0, 0, 0.3);
                                     font-family: 'Roboto', sans-serif;
@@ -410,7 +415,6 @@
             }
         }
     }
-
     &__newsletter {
         width: 100%;
         background: $white;
@@ -435,7 +439,6 @@
                     font-weight: lighter;
                     text-align: center;
                     color: $black-medium;
-
                     > strong {
                         font-family: 'Simonetta', sans-serif;
                         text-transform: uppercase;
@@ -455,7 +458,7 @@
                         label {
                             position: absolute;
                             @include px-for-rem(10, top);
-                            @include px-for-rem(20, left);
+                            @include px-for-rem(36, left);
                             font-family: 'Roboto', sans-serif;
                             @include px-for-rem(16, font-size);
                             color: $gray;
@@ -473,26 +476,27 @@
                             color: $gray;
                         }
                         button {
-                            @include px-for-rem(10, padding-top);
-                            @include px-for-rem(10, padding-bottom);
+                            @include px-for-rem(12, padding-top);
+                            @include px-for-rem(12, padding-bottom);
                             @include px-for-rem(18, padding-left);
                             @include px-for-rem(18, padding-right);
                             background: $beige;
                             border: none;
-                            @include px-for-rem(3, border-top-right-radius);
-                            @include px-for-rem(3, border-bottom-right-radius);
                             outline: none;
                             font-family: 'Roboto', sans-serif;
-                            @include px-for-rem(16, font-size);
+                            @include px-for-rem(14, font-size);
                             color: $white;
                             cursor: pointer;
+                            &:hover {
+                                opacity: 0.92;
+                                @include transition(.4s opacity);
+                            }
                         }
                     }
                 }
             }
         }
     }
-
     &__blog-container {
         display: flex;
         width: 100%;
@@ -506,9 +510,8 @@
             width: 94%;
             background: $ice;
             &__blog-instruction {
-                
                 @include px-for-rem(580, max-width);
-                margin: 40px auto;
+                margin: 2.5rem auto;
                 h5 {
                     margin: 0;
                     font-family: 'Simonetta', sans-serif;
@@ -530,7 +533,6 @@
                     }
                 }
             }
-
             &__posts {
                 display: flex;
                 justify-content: center;
@@ -544,7 +546,7 @@
                         @include px-for-rem(320, width);
                         @include px-for-rem(6, margin);
                         &-image {
-                            @include px-for-rem(320, height);
+                            @include px-for-rem(280, height);
                             overflow: hidden;
                             img {
                                 width: 100%;
@@ -560,7 +562,9 @@
                             width: 100%;
                             background: $white;
                             &__content {
-                                padding: 20px;
+                                position: relative;
+                                padding: 1.25rem;
+                                @include px-for-rem(136, height);
                                 h6.b-title-post {
                                     margin: 0;
                                     font-family: 'Roboto', sans-serif;
@@ -583,17 +587,23 @@
                                     color: $black-medium;
                                 }
                                 a {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    position: absolute;
+                                    @include px-for-rem(16, right);
                                     font-family: 'Roboto', sans-serif;
                                     @include px-for-rem(14, font-size);
-                                    padding: .25rem 1rem;
+                                    padding: 0rem 1rem;
+                                    @include px-for-rem(34, height);
                                     text-align: end;
                                     text-decoration: none;
                                     color: $white;
                                     background: $beige;
                                     box-shadow: .1875rem .1875rem .1875rem 0 rgba(0, 0, 0, 0.3);
                                     &:hover {
-                                        color: $white;
-                                        @include transition(.45s background);
+                                        opacity: 0.92;
+                                        @include transition(.4s opacity);
                                     }
                                 }
                             }

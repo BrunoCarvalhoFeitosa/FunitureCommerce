@@ -1,7 +1,6 @@
 .b-header-container {
     width: 100%;
     height: auto;
-
     &__institucional {
         width: 100%;
         @include px-for-rem(40, height);
@@ -13,41 +12,46 @@
                 margin: 0;
                 @include transform(translateY(10px));
                 li {
-                    margin: 0 .625rem;
-                    &:nth-child(1) {
-                        svg {
-                            width: 20px;
-                            height: 20px; 
+                        text-decoration: none;
+                        margin: 0 .625rem;
+                        &:nth-child(1) {
+                            svg {
+                                width: 20px;
+                                height: 20px;
+                            }
                         }
-                    }
-                    &:nth-child(2) {
-                        svg {
-                            width: 19px;
-                            height: 19px; 
+                        &:nth-child(2) {
+                            svg {
+                                width: 19px;
+                                height: 19px;
+                            }
                         }
-                    }
-                    &:nth-child(3) {
-                        svg {
-                            width: 17px;
-                            height: 17px; 
+                        &:nth-child(3) {
+                            svg {
+                                width: 17px;
+                                height: 17px;
+                            }
                         }
-                    }
-                    &:nth-child(4) {
-                        svg {
-                            width: 19px;
-                            height: 19px;
-                            @include transform(translateY(-2px));
+                        &:nth-child(4) {
+                            a{
+                                text-decoration: none;
+                                svg {
+                                    width: 19px;
+                                    height: 19px;
+                                    @include transform(translateY(-2px));
+                                }
+                            }
+                            span.b-qtd-cart {
+                                background: #B39F98;
+                                padding: 0 .25rem;
+                                font-family: 'Roboto', sans-serif;
+                                @include px-for-rem(11, font-size);
+                                font-weight: bold;
+                                color: #fff;
+                                position: relative;
+                                cursor: pointer;
+                            }
                         }
-                        span.b-qtd-cart {
-                            background: #B39F98;
-                            padding: 0 .25rem;
-                            font-family: 'Roboto', sans-serif;
-                            @include px-for-rem(11, font-size);
-                            font-weight: bold;
-                            color: #fff;
-                            position: relative;
-                        }
-                    }
                     svg {
                         fill: $gray;
                         cursor: pointer;
@@ -56,54 +60,44 @@
             }
         }
     }
-
     &__search {
         position: absolute;
         top: 0;
         width: 100%;
         @include transform(translateY(-240px));
-        @include px-for-rem(240, height);
+        @include px-for-rem(50, height);
         background: $white-light;
         &-content {
             form {
-                @include px-for-rem(20, margin-top);
                 display: flex;
                 justify-content: center;
                 input {
+                    background: none;
                     border: none;
                     outline: none;
-                    width: 25%;
-                    @include px-for-rem(12, padding);
+                    width: 100%;
+                    @include px-for-rem(50, height);
+                    @include px-for-rem(80, padding-left);
+                }
+                 ::-webkit-input-placeholder {
+                    @include px-for-rem(20, font-size);
+                    text-align: center;
+                    color: $gray-lighter;
                 }
                 button {
+                    @include px-for-rem(240, width);
+                    @include px-for-rem(50, height);
                     background: $beige;
                     border: none;
                     outline: none;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 14px;
+                    color: $white;
                     cursor: pointer;
-                }
-            }
-            &__more-search {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                ol {
-                    h5 {
-                        margin: 0;
-                        font-family: 'Simonetta', sans-serif;
-                        @include px-for-rem(20, font-size);
-                        text-transform: uppercase;
-                        color: $gray;
-                    }
-                    li {
-                        font-family: 'Roboto', sans-serif;
-                        @include px-for-rem(14, font-size);
-                        color: $black-medium;
-                    }
                 }
             }
         }
     }
-
     &__minicart {
         position: fixed;
         top: 0;
@@ -118,6 +112,8 @@
             position: absolute;
             top: 0;
             width: 100%;
+            background: $white;
+            z-index: 1;
             &__title {
                 display: flex;
                 justify-content: space-between;
@@ -152,36 +148,44 @@
                 min-height: 78vh;
                 overflow-y: scroll;
                 &-content {
-                    display: flex;
-                    justify-content: space-between;
                     @include px-for-rem(60, margin-top);
+                    display: inline-block;
+                    @include px-for-rem(20, margin-bottom);
                     width: 100%;
                     height: auto;
-                    &__image {
-                        opacity: 0;
-                        visibility: hidden;
-                        @include px-for-rem(12, margin-left);
-                        @include px-for-rem(70, width);
-                        background: $ice;
-                        img {
-                            width: 100%;
-                            cursor: pointer;
+                    &__item {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        @include px-for-rem(18, margin-bottom);
+                        &-image {
+                            @include px-for-rem(12, margin-left);
+                            @include px-for-rem(92, width);
+                            background: $ice;
+                            img {
+                                position: relative;
+                                top: 50%;
+                                @include transform(translateY(0%));
+                                width: 100%;
+                                cursor: pointer;
+                            }
                         }
-                    }
-                    &__name {
-                        > h4 {
-                            font-family: 'Roboto', sans-serif;
-                            @include px-for-rem(14, font-size);
-                            font-weight: lighter;
-                            color: $black-medium;
+                        &-name {
+                            > h4 {
+                                font-family: 'Roboto', sans-serif;
+                                @include px-for-rem(14, font-size);
+                                font-weight: lighter;
+                                color: $black-medium;
+                            }
                         }
-                    }
-                    &__price {
-                        > h4 {
-                            font-family: 'Roboto', sans-serif;
-                            @include px-for-rem(14, font-size);
-                            font-weight: lighter;
-                            color: $gray-light;
+                        &-price {
+                            @include px-for-rem(12, margin-right);
+                            > h4 {
+                                font-family: 'Roboto', sans-serif;
+                                @include px-for-rem(14, font-size);
+                                font-weight: lighter;
+                                color: $gray-light;
+                            }
                         }
                     }
                 }
@@ -216,6 +220,7 @@
                     font-family: 'Roboto', sans-serif;
                     @include px-for-rem(12, font-size);
                     text-align: center;
+                    text-decoration: underline;
                     color: $black-medium;
                     cursor: pointer;
                 }
@@ -233,19 +238,21 @@
                     background: none;
                     border: none;
                     outline: none;
-                    text-align: center;
-                    font-family: 'Roboto', sans-serif;
-                    @include px-for-rem(14, font-size);
-                    font-weight: bold;
-                    text-transform: uppercase;
-                    @include px-for-rem(3, letter-spacing);
-                    color: $white;
                     cursor: pointer;
+                    > a {
+                        font-family: 'Roboto', sans-serif;
+                        @include px-for-rem(14, font-size);
+                        font-weight: bold;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        text-align: center;
+                        @include px-for-rem(3, letter-spacing);
+                        color: $white;
+                    }
                 }
             }
         }
     }
-
     &__departments {
         width: 100%;
         @include px-for-rem(164, height);
@@ -253,7 +260,6 @@
         display: flex;
         justify-content: center;
         align-items: baseline;
-        
         > div {
             display: flex;
             justify-content: center;
@@ -272,7 +278,6 @@
                 }
             }
         }
-
         &-brand {
             a {
                 @include transform(translateY(6px));
@@ -284,7 +289,6 @@
                 color: $black-medium;
             }
         }
-
         &-menu {
             nav {
                 ul {

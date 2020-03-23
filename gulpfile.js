@@ -10,46 +10,46 @@ const browserSync = require("browser-sync").create();
 //Task to transform pug in html and build file in browser
 gulp.task("pug", () => {
     return gulp.src("src/templates/*.pug")
-    .pipe(pug({
-        pretty : false
-    }))
-    .pipe(gulp.dest("build"))
-    .pipe(browserSync.stream());
+        .pipe(pug({
+            pretty: false
+        }))
+        .pipe(gulp.dest("build"))
+        .pipe(browserSync.stream());
 });
 
 //Task to transform scss in css and build file in browser
 gulp.task("sass", (resolve) => {
-    return gulp.src("src/scss/*.scss")
-    .pipe(sass({
-        outputStyle : "compressed"
-    }))
-    .pipe(gulp.dest("build/css"))
-    .pipe(browserSync.stream())
+    return gulp.src("src/scss/**/**/*.scss")
+        .pipe(sass({
+            outputStyle: "compressed"
+        }))
+        .pipe(gulp.dest("build/css"))
+        .pipe(browserSync.stream())
     resolve();
 });
 
 //Task to uglify js and build file in browser
 gulp.task("uglify", () => {
-    return gulp.src("src/js/*.js")
-    .pipe(uglify())
-    .pipe(gulp.dest("build/js"))
-    .pipe(browserSync.stream());
+    return gulp.src("src/js/**/*.js")
+        .pipe(uglify())
+        .pipe(gulp.dest("build/js"))
+        .pipe(browserSync.stream());
 });
 
 //Task to minify images
 gulp.task("imageMin", () => {
     return gulp.src("src/images/*")
-    .pipe(imageMin({
-        progressive : true,
-        svgoPlugins: [{removeViewBox : false}],
-    }))
-    .pipe(gulp.dest("build/images"));
+        .pipe(imageMin({
+            progressive: true,
+            svgoPlugins: [{ removeViewBox: false }],
+        }))
+        .pipe(gulp.dest("build/images"));
 });
 
 //Task to watch all the changes in files and generate build
 gulp.task("watch", () => {
     browserSync.init({
-        server : "build"
+        server: "build"
     });
 
     gulp.watch("src/templates/**/*.pug", gulp.series("pug"));
