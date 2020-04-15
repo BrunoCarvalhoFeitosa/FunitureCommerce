@@ -28,9 +28,8 @@ const furniture_CloseMiniCart = () => {
     });
 
     document.addEventListener("keyup", (ev) => {
-        switch (ev) {
+        switch (ev.key) {
             case "Escape":
-                console.log("esc");
                 document.querySelector(".b-header-container__minicart").classList.remove("is--active-minicart");
                 break;
             default:
@@ -41,9 +40,7 @@ const furniture_CloseMiniCart = () => {
 
 //Function to calculate value of products in minicart
 const furniture_CalculateMinicart = () => {
-
     let carts = document.querySelectorAll(".add-to-cart");
-
     let products = [{
             status: 'Em estoque',
             image: '../images/image-home-sofa01.png',
@@ -304,6 +301,21 @@ const furniture_CalculateMinicart = () => {
         }
     }
 
+    //Function to display text "Adding..." in buy button
+    function displayTextBuyButton() {
+        carts.forEach((button) => {
+            button.addEventListener("click", () => {
+                button.innerHTML = "Adicionando...";
+                let minicart = document.querySelector(".b-header-container__minicart");
+                if(minicart.classList.contains('is--active-minicart')) {
+                    return setTimeout(() => {
+                        button.innerHTML = "Adicionar à sacola";
+                    }, 1200);
+                };
+            });
+        });
+    };
+
     //Function to create cart quantity
     function amountCart(products) {
         let productQuantity = localStorage.getItem("cartQuantity");
@@ -352,14 +364,6 @@ const furniture_CalculateMinicart = () => {
             localStorage.setItem("totalCost", cartCost + products.bestPrice);
         } else {
             localStorage.setItem("totalCost", products.bestPrice);
-        }
-    };
-
-    // Function to load products from localStorage
-    function onloadTotalCart() {
-        let productsInMinicart = localStorage.getItem("productsInMinicart");
-        if (productsInMinicart) {
-            document.querySelector(".b-header-container__minicart-content__products-content").textContent = productsInMinicart;
         }
     };
 
@@ -445,10 +449,11 @@ const furniture_CalculateMinicart = () => {
     };
 
     onloadAmountCart();
-    // onloadTotalCart();
+    displayTextBuyButton();
     displayCart();
 };
 
+//Function to execute in batch all other function in load of page
 document.addEventListener("DOMContentLoaded", () => {
     furniture_OpenMiniCart();
     furniture_CloseMiniCart();
