@@ -152,7 +152,8 @@
                             }
                             &:hover,
                             &:focus {
-                                opacity: .86;
+                                opacity: 0.82;
+                                @include transition(.6s opacity);
                             }
                         }
                     }
