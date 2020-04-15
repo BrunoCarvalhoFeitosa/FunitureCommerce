@@ -114,7 +114,8 @@
                     color: $white;
                     cursor: pointer;
                     &:hover {
-                        opacity: .92;
+                        opacity: .82;
+                        @include transition(.6s opacity);
                     }
                 }
             }
