@@ -310,7 +310,7 @@ const funiture_CalculateMinicart = () => {
                 if(minicart.classList.contains('is--active-minicart')) {
                     return setTimeout(() => {
                         button.innerHTML = "Adicionar à sacola";
-                    }, 1200);
+                    }, 1500);
                 };
             });
         });
