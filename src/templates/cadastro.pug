@@ -13,40 +13,37 @@ html(lang="pt-br")
     body
 
     section.b-register
-        img(src="../images/image-home-decoration.png")/
-        div.b-register-container
-            form.b-register-container__form
-                div.b-register-container__form-flex
-                    div.b-register-container__form-flex__group
-                        label(for="name") Nome
-                        input(type="text", id="name", class="form-input", required="required")/
-                    div.b-register-container__form-flex__group
-                        label(for="surname") Sobrenome
-                        input(type="text", id="surname", class="form-input", required="required")/
-                div.b-register-container__form-flex
-                    div.b-register-container__form-flex__group
-                        label(for="sexo") Sexo
-                        input(type="text", id="sexo", class="form-input", required="required")/
-                    div.b-register-container__form-flex__group
-                        label(for="cpf") CPF
-                        input(type="text", id="cpf", class="form-input", required="required")/
-                div.b-register-container__form-flex
-                    div.b-register-container__form-flex__group
-                        label(for="birthdayDate") Data de Nascimento
-                        input(type="text", id="birthdayDate", class="form-input", required="required")/
-                    div.b-register-container__form-flex__group
-                        label(for="email") E-mail
-                        input(type="email", id="email", class="form-input", required="required")/
-                div.b-register-container__form-flex
-                    div.b-register-container__form-flex__group
-                        label(for="password") Senha
-                        input(type="password", id="password", class="form-input", required="required")/
-                    div.b-register-container__form-flex__group
-                        label(for="passwordEqual") Confirmação de Senha
-                        input(type="password", id="passwordEqual", class="form-input", required="required")/
-                div.b-register-container__form-flex
-                    div.b-register-container__form-flex__group
-                        button(type="submit") Cadastrar-me
-
+        section.b-register__guides
+            nav
+                ul
+                    li
+                        a(href="") Entrar
+                    li
+                        a(href="") Cadastrar-me
+                    li
+                        a(href="") Políticas
+                    li
+                        a(href="") Segurança
+        section.b-register__form
+            h2 Seja bem-vindo novamente
+            p Ficamos felizes em ter você por aqui, para melhorar sua experiência de compra, pedimos para que nunca compartilhe seus dados pessoais.
+            form.b-register__form-fieldset(action="", method="POST")
+                div.b-register__form-fieldset__group
+                    label(for="email")
+                        img(src="../images/icon-email.png")/
+                    input(type="email", name="email", id="email", placeholder="E-mail")/
+                div.b-register__form-fieldset__group
+                    label(for="senha")
+                        img(src="../images/icon-password.png")/
+                    input(type="password", name="senha", id="senha", placeholder="Senha")/
+                div.b-register__form-fieldset__actions
+                    div.b-register__form-fieldset__actions-remember
+                        input(type="checkbox", name="chk-remember", id="remember")/
+                        label(for="remember") Lembrar-me
+                    div.b-register__form-fieldset__actions-forgotPass
+                        a(href="") Esqueci minha senha
+                div.b-register__form-fieldset__actions-submit
+                    button(type="submit", class="b-submit") Entrar agora
+                    
     script(src="../js/cadastro.js")
             
