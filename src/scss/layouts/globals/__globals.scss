@@ -24,31 +24,6 @@ html {
      ::-webkit-scrollbar-thumb {
         background: $beige;
     }
-    .is--active-menu {
-        position: fixed;
-        @include transform(translateY(0));
-        transition: transform .55s ease;
-        z-index: 99;
-    }
-    .is--active-minicart {
-        @include transform(translateX(0rem));
-        transition: opacity .3s ease, transform 2s ease;
-    }
-    .is--active-imageminicart {
-        opacity: 1;
-        visibility: visible;
-    }
-    .is--active-form {
-        @include transform(translateY(-2.125rem));
-        transition: .48s transform;
-    }
-    .is--active-header {
-        position: fixed;
-    }
-    .is--active-back-button {
-        @include transform(translateY(-5rem));
-        @include transition(.6s transform);
-    }
     @keyframes animationZoom {
         0% {
             transform: scale(0.7);
@@ -80,11 +55,39 @@ html {
     }
     @keyframes animationFloat {
         50% {
-            transform: translateY(60px);
+            transform: translateY(90px);
         }
         100% {
             transform: translateY(0px);
         }
+    }
+    .is--active-menu {
+        position: fixed;
+        @include transform(translateY(0));
+        transition: transform .55s ease;
+        z-index: 99;
+    }
+    .is--active-minicart {
+        @include transform(translateX(0rem));
+        transition: opacity .3s ease, transform 2s ease;
+    }
+    .is--active-imageminicart {
+        opacity: 1;
+        visibility: visible;
+    }
+    .is--active-header {
+        position: fixed;
+    }
+    .is--actice-zoom {
+        @include animation(animationZoom 1.05s ease-out);
+    }
+    .is--active-form {
+        @include transform(translateY(-2.125rem));
+        transition: .48s transform;
+    }
+    .is--active-back-button {
+        @include transform(translateY(-5rem));
+        @include transition(.6s transform);
     }
      ::selection {
         background: $selection;
