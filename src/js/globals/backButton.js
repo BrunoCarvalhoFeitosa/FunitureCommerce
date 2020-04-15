@@ -1,7 +1,7 @@
 var furniture_BackTop = () => {
     let backButton = document.querySelector(".b-buttonback");
 
-    if (document.body.scrollTop > 5000 || document.documentElement.scrollTop > 5000) {
+    if (document.body.scrollTop > 3000 || document.documentElement.scrollTop > 3000) {
         backButton.classList.add("is--active-back-button");
     } else {
         backButton.classList.remove("is--active-back-button");
