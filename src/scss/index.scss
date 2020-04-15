@@ -11,7 +11,7 @@
     background: $ice;
     .b-image-decoration {
         position: absolute;
-        @include px-for-rem(35, top);
+        @include px-for-rem(55, top);
         @include px-for-rem(0, left);
         @include filter(drop-shadow(.375rem 1rem .375rem $black-medium));
         @include animation(animationFloat 2.56s infinite);
@@ -169,7 +169,7 @@
         float: right;
         @include transform(translateY(-6.25rem));
         width: 89%;
-        @include px-for-rem(500, height);
+        @include px-for-rem(450, height);
         background: #fff;
         &-container {
             display: flex;
@@ -186,6 +186,28 @@
             margin: 30rem auto 0;
             @include px-for-rem(1080, max-width);
             height: 100%;
+            > h3 {
+                font-family: 'Simonetta', sans-serif;
+                @include px-for-rem(60, font-size);
+                font-weight: bold;
+                text-transform: uppercase;
+                @include px-for-rem(2, letter-spacing);
+                @include px-for-rem(0, line-height);
+                color: $black-medium;
+            }
+            p {
+                @include px-for-rem(80, margin-bottom);
+                font-family: 'Roboto', sans-serif;
+                @include px-for-rem(14, font-size);
+                font-weight: lighter;
+                line-height: 0;
+                color: $black-medium;
+                > strong {
+                    font-family: 'Simonetta', sans-serif;
+                    text-transform: uppercase;
+                    color: $beige;
+                }
+            }
             &__row {
                 display: flex;
                 margin: 1.5rem 0;
@@ -196,8 +218,8 @@
                     width: 33.3%;
                     background: #f5f5f5;
                     &:hover {
-                        @include transform(translateY(-.8000rem));
-                        @include transition(.5s transform);
+                        @include transform(translateY(-.6000rem) !important);
+                        @include transition(.85s transform);
                         @include filter(drop-shadow(.155rem 0rem .155rem $beige));
                     }
                     &__image {
@@ -259,8 +281,8 @@
                             color: $white;
                             cursor: pointer;
                             &:hover {
-                                opacity: 0.92;
-                                @include transition(.4s opacity);
+                                opacity: 0.82 !important;
+                                @include transition(.6s opacity);
                                 animation: animationShake .65s;
                             }
                         }
@@ -340,8 +362,8 @@
                             width: 33.3%;
                             background: $white;
                             &:hover {
-                                @include transform(translateY(-.8000rem));
-                                @include transition(.7s transform);
+                                @include transform(translateY(-.6000rem) !important);
+                                @include transition(.85s transform);
                                 @include filter(drop-shadow(.155rem 0rem .155rem $beige));
                             }
                             &__image {
@@ -462,6 +484,7 @@
                             font-family: 'Roboto', sans-serif;
                             @include px-for-rem(16, font-size);
                             color: $gray;
+                            z-index: 9;
                         }
                         input {
                             @include px-for-rem(300, width);
@@ -488,8 +511,8 @@
                             color: $white;
                             cursor: pointer;
                             &:hover {
-                                opacity: 0.92;
-                                @include transition(.4s opacity);
+                                opacity: 0.82 !important;
+                                @include transition(.6s opacity);
                             }
                         }
                     }
@@ -602,8 +625,8 @@
                                     background: $beige;
                                     box-shadow: .1875rem .1875rem .1875rem 0 rgba(0, 0, 0, 0.3);
                                     &:hover {
-                                        opacity: 0.92;
-                                        @include transition(.4s opacity);
+                                        opacity: 0.82 !important;
+                                        @include transition(.6s opacity);
                                     }
                                 }
                             }
