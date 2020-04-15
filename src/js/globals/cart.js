@@ -1,5 +1,5 @@
 //Function to open minicart in icon cart and buy button of products
-const furniture_OpenMiniCart = () => {
+const funiture_OpenMiniCart = () => {
     let buttonBuy = document.querySelectorAll(".add-to-cart");
     let buttonCart = document.querySelector("#cart span");
 
@@ -15,7 +15,7 @@ const furniture_OpenMiniCart = () => {
 }
 
 //Function to close minicart in close and continue button of minicart
-const furniture_CloseMiniCart = () => {
+const funiture_CloseMiniCart = () => {
     let buttonClose = document.querySelector(".b-header-container__minicart-content__title-close");
     let buttonContinue = document.querySelector(".b-header-container__minicart-content__continue a");
 
@@ -39,7 +39,7 @@ const furniture_CloseMiniCart = () => {
 };
 
 //Function to calculate value of products in minicart
-const furniture_CalculateMinicart = () => {
+const funiture_CalculateMinicart = () => {
     let carts = document.querySelectorAll(".add-to-cart");
     let products = [{
             status: 'Em estoque',
@@ -456,7 +456,7 @@ const furniture_CalculateMinicart = () => {
 
 //Function to execute in batch all other function in load of page
 document.addEventListener("DOMContentLoaded", () => {
-    furniture_OpenMiniCart();
-    furniture_CloseMiniCart();
-    furniture_CalculateMinicart();
+    funiture_OpenMiniCart();
+    funiture_CloseMiniCart();
+    funiture_CalculateMinicart();
 });
