@@ -1,5 +1,5 @@
 //Function to pass slide images from carousel home
-const furniture_CarouselHome = () => {
+const funiture_CarouselHome = () => {
     let arraySlides = document.querySelector(".b-container__slider-content__image").children;
     let totalSlides = arraySlides.length;
     let buttonNext = document.querySelector(".b-container__slider-content__image-mini-slider__controls-next");
@@ -38,7 +38,7 @@ const furniture_CarouselHome = () => {
 };
 
 //Function to pass slide images from minicarousel home
-const furniture_MiniCarouselHome = () => {
+const funiture_MiniCarouselHome = () => {
     let arrayMiniSlides = document.querySelectorAll(".b-container__slider-content__image-mini-slider__product-item");
     let totalMiniSlides = arrayMiniSlides.length;
     let index = 0;
@@ -77,7 +77,145 @@ const furniture_MiniCarouselHome = () => {
     });
 };
 
+const funiture_Animation = () => {
+    anime.timeline({
+        easing: 'easeOutExpo'
+    }).add({
+        targets: '.b-header-container__institucional nav ul li svg',
+        opacity: [0, 1],
+        translateY: [-80, 0],
+        delay: (el, i) => 1300 * i,
+        offset: '-=450',
+    }).add({
+        targets: '.b-header-container__departments-brand a',
+        translateY: [-100, 0],
+    }).add({
+        targets: 'nav ul li',
+        opacity: [0, 1],
+        translateY: [-40, 0],
+        delay: 5000,
+        offset: '-=450',
+        delay: (el, i) => 325 * i,
+    }).add({
+        targets: '.b-container__slider-content__text-article h2',
+        opacity: [0, 1],
+        translateY: [-200, 0],
+        delay: 450,
+    }).add({
+        targets: '.b-container__slider-content__text-article h3',
+        opacity: [0, 1],
+        translateX: [200, 0],
+    }).add({
+        targets: '.b-image-decoration',
+        opacity: [0, 1],
+    }).add({
+        targets: '.b-container__slider-content__image-mini-slider',
+        opacity: [0, 1],
+        translateY: [150, 0],
+        delay: (el, i) => 700 * i,
+        offset: '-=300',
+    }).add({
+        targets: '.b-container__slider-content__image-item img',
+        opacity: [0, 1],
+        translateY: [150, 0],
+        delay: (el, i) => 700 * i,
+        offset: '-=300',
+    }).add({
+        targets: '.b-container__shelf-content h3',
+        opacity: [0, 1],
+        translateX: [-200, 0],
+        offset: '-=300',
+    }).add({
+        targets: '.b-container__shelf-content p',
+        opacity: [0, 1],
+        translateY: [80, 0],
+        offset: '-=300',
+    }).add({
+        targets: '.b-container__shelf-content__row-product',
+        opacity: [0, 1],
+        translateY: [80, 0],
+        delay: (el, i) => 700 * i,
+        offset: '-=300',
+    }).add({
+        targets: '.b-container__off-product-container__image img',
+        opacity: [0, 1],
+        translateY: [-300, 0],
+    }).add({
+        targets: '.b-container__off-product-container__text-content h3',
+        opacity: [0, 1],
+        translateY: [80, 0],
+    }).add({
+        targets: '.b-container__off-product-container__text-content p',
+        opacity: [0, 1],
+        translateY: [-80, 0],
+    }).add({
+        targets: '.b-container__off-departments-container__content-products__row-col',
+        opacity: [0, 1],
+        translateY: [80, 0],
+        delay: (el, i) => 700 * i,
+        offset: '-=300',
+    }).add({
+        targets: '.b-container__newsletter-content__instruction h4',
+        opacity: [0, 1],
+        translateY: [-80, 0],
+    }).add({
+        targets: '.b-container__newsletter-content__instruction p',
+        opacity: [0, 1],
+        translateX: [300, 0],
+    }).add({
+        targets: '.b-container__newsletter-content__controls input',
+        opacity: [0, 1],
+        translateX: [300, 0],
+    }).add({
+        targets: '.b-container__newsletter-content__controls label',
+        opacity: [0, 1],
+    }).add({
+        targets: '.b-container__newsletter-content__controls button',
+        opacity: [0, 1],
+        translateX: [300, 0],
+    }).add({
+        targets: '.b-container__blog-container-content__blog-instruction h5',
+        opacity: [0, 1],
+        translateX: [-300, 0],
+    }).add({
+        targets: '.b-container__blog-container-content__blog-instruction p',
+        opacity: [0, 1],
+        translateY: [-100, 0],
+    }).add({
+        targets: '.b-container__blog-container-content__posts-tips__card',
+        opacity: [0, 1],
+        translateY: [-100, 0],
+    }).add({
+        targets: '.b-title-post',
+        opacity: [0, 1],
+        translateX: [100, 0],
+    }).add({
+        targets: '.b-author-post',
+        opacity: [0, 1],
+        translateX: [-100, 0],
+    }).add({
+        targets: '.b-introduction-post',
+        opacity: [0, 1],
+        translateY: [-50, 0],
+    }).add({
+        targets: '.b-container__blog-container-content__posts-tips__card-text__content a',
+        opacity: [0, 1],
+        translateX: [40, 0],
+    }).add({
+        targets: '.b-footer-container__institucional-item',
+        translateY: [-35, 0],
+        duration: 1600,
+        offset: '-=700',
+        delay: (el, i) => 600 * i,
+    }).add({
+        targets: '.b-footer-container__brand h6 a',
+        opacity: [0, 1],
+        translateY: [60, 0],
+    })
+}    
+
 document.addEventListener("DOMContentLoaded", () => {
-    furniture_CarouselHome();
-    furniture_MiniCarouselHome();
+    funiture_CarouselHome();
+    funiture_MiniCarouselHome();
+    funiture_Animation();
 });
