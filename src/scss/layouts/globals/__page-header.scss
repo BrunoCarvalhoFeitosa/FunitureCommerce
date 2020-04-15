@@ -199,6 +199,7 @@
                         @include px-for-rem(12, margin-left);
                         font-family: 'Roboto', sans-serif;
                         @include px-for-rem(16, font-size);
+                        text-transform: uppercase;
                         color: $black-medium;
                     }
                 }
@@ -228,18 +229,19 @@
             &__buy {
                 display: flex;
                 justify-content: center;
-                @include px-for-rem(16, padding);
+                @include px-for-rem(18, padding);
                 width: 100%;
                 background: $beige;
                 cursor: pointer;
-                > button {
+                > a {
                     width: 100%;
                     height: 100%;
-                    background: none;
-                    border: none;
-                    outline: none;
-                    cursor: pointer;
-                    > a {
+                    button {
+                        width: 100%;
+                        height: 100%;
+                        background: none;
+                        border: none;
+                        outline: none;
                         font-family: 'Roboto', sans-serif;
                         @include px-for-rem(14, font-size);
                         font-weight: bold;
@@ -247,8 +249,14 @@
                         text-transform: uppercase;
                         text-align: center;
                         @include px-for-rem(3, letter-spacing);
+                        @include px-for-rem(14, line-height);
                         color: $white;
+                        cursor: pointer;
                     }
+                }
+                &:hover {
+                    opacity: 0.82;
+                    @include transition(.6s opacity);
                 }
             }
         }
