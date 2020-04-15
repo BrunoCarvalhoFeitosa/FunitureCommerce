@@ -3,7 +3,7 @@ const furniture_OpenSearchBar = () => {
     let search = document.querySelector("#search");
 
     search.addEventListener("click", () => {
-        document.querySelector(".b-header-container__search").classList.add("is--active-menu");
+        document.querySelector(".b-header-container__search").classList.add("is--active-search");
     });
 };
 
@@ -12,7 +12,7 @@ const furniture_CloseSearchBar = () => {
     document.addEventListener("keyup", (ev) => {
         switch (ev.key) {
             case "Escape":
-                document.querySelector(".b-header-container__search").classList.remove("is--active-menu");
+                document.querySelector(".b-header-container__search").classList.remove("is--active-search");
                 break;
             default:
                 break;

@@ -61,7 +61,7 @@ html {
             transform: translateY(0px);
         }
     }
-    .is--active-menu {
+    .is--active-search {
         position: fixed;
         @include transform(translateY(0));
         transition: transform .55s ease;
