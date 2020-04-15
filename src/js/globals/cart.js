@@ -450,6 +450,7 @@ const furniture_CalculateMinicart = () => {
 
     onloadAmountCart();
     displayTextBuyButton();
+    displayMinicart();
     displayCart();
 };
 
