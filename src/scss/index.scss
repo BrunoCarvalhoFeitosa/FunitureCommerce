@@ -25,7 +25,6 @@
         width: 100%;
         &-controls {
             width: 11%;
-            height: auto;
             @include transform(translateY(70px));
             background: $ice;
         }
@@ -169,7 +168,7 @@
     &__promotion-cards {
         float: right;
         @include transform(translateY(-6.25rem));
-        width: 89%;
+        width: 89.4%;
         @include px-for-rem(450, height);
         background: #fff;
         &-container {
