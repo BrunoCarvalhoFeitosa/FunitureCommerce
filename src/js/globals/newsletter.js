@@ -8,6 +8,7 @@ const furniture_Newsletter = () => {
     });
 };
 
+//Function to execute in batch all other function in load of page
 document.addEventListener("DOMContentLoaded", () => {
     furniture_Newsletter();
 });

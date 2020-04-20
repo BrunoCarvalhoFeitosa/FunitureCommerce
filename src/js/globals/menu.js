@@ -13,6 +13,7 @@ const funiture_OpenMenu = () => {
     
 };
 
+//Function to execute in batch all other function in load of page
 document.addEventListener("DOMContentLoaded", () => {
     funiture_OpenMenu();
 });
