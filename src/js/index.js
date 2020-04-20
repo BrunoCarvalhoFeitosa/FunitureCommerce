@@ -24,7 +24,7 @@ const funiture_CarouselHome = () => {
         for (i = 0; i < arraySlides.length; i++) {
             arraySlides[i].classList.remove("active");
         }
-
+        
         arraySlides[index].classList.add("active");
     }
 
@@ -71,15 +71,20 @@ const funiture_MiniCarouselHome = () => {
     btnNext.addEventListener("click", () => {
         prox("next");
     });
-
+    
     imgNext.addEventListener("click", () => {
         prox("next");
     });
 };
 
-const funiture_Animation = () => {
+const funiture_AnimationTimeline = () => {
     anime.timeline({
         easing: 'easeOutExpo'
+    }).add({
+        targets: '.b-author a',
+        opacity: [0, 1],
+        translateY: [-80, 0],
+        offset: '-=450',
     }).add({
         targets: '.b-header-container__institucional nav ul li svg',
         opacity: [0, 1],
@@ -97,6 +102,11 @@ const funiture_Animation = () => {
         offset: '-=450',
         delay: (el, i) => 325 * i,
     }).add({
+        targets: '.b-header-container__departments-hamburguer',
+        opacity: [0, 1],
+        translateX: [100, 0],
+        offset: '-=450',
+    }).add({
         targets: '.b-container__slider-content__text-article h2',
         opacity: [0, 1],
         translateY: [-200, 0],
@@ -105,9 +115,6 @@ const funiture_Animation = () => {
         targets: '.b-container__slider-content__text-article h3',
         opacity: [0, 1],
         translateX: [200, 0],
-    }).add({
-        targets: '.b-image-decoration',
-        opacity: [0, 1],
     }).add({
         targets: '.b-container__slider-content__image-mini-slider',
         opacity: [0, 1],
@@ -120,6 +127,10 @@ const funiture_Animation = () => {
         translateY: [150, 0],
         delay: (el, i) => 700 * i,
         offset: '-=300',
+    }).add({
+        targets: '.b-container__shelf-content h2',
+        opacity: [0, 1],
+        translateY: [80, 0],
     }).add({
         targets: '.b-container__shelf-content h3',
         opacity: [0, 1],
@@ -148,6 +159,10 @@ const funiture_Animation = () => {
         targets: '.b-container__off-product-container__text-content p',
         opacity: [0, 1],
         translateY: [-80, 0],
+    }).add({
+        targets: '.b-container__off-departments-container__content-products h2',
+        opacity: [0, 1],
+        translateY: [80, 0],
     }).add({
         targets: '.b-container__off-departments-container__content-products__row-col',
         opacity: [0, 1],
@@ -202,7 +217,12 @@ const funiture_Animation = () => {
         opacity: [0, 1],
         translateX: [40, 0],
     }).add({
+        targets: '.b-image-decoration',
+        opacity: [0, 1],
+        translateX: [100, 0],
+    }).add({
         targets: '.b-footer-container__institucional-item',
+        opacity: [0, 1],
         translateY: [-35, 0],
         duration: 1600,
         offset: '-=700',
@@ -217,5 +237,5 @@ const funiture_Animation = () => {
 document.addEventListener("DOMContentLoaded", () => {
     funiture_CarouselHome();
     funiture_MiniCarouselHome();
-    funiture_Animation();
+    funiture_AnimationTimeline();
 });
