@@ -9,14 +9,6 @@
 .b-container {
     width: 100%;
     background: $ice;
-    .b-image-decoration {
-        position: absolute;
-        @include px-for-rem(55, top);
-        @include px-for-rem(0, left);
-        @include filter(drop-shadow(.375rem 1rem .375rem $black-medium));
-        @include animation(animationFloat 2.56s infinite);
-        z-index: 9;
-    }
     &__slider {
         position: relative;
         display: flex;
@@ -33,13 +25,31 @@
             width: 86%;
             height: 100%;
             background: $white-light;
+
+            @include for-mobile {
+                flex-direction: column;
+            }
             &__text {
                 width: 50%;
                 height: auto;
+
+                @include for-mobile {
+                    width: 100%;
+                }
                 &-article {
                     @include px-for-rem(368, width);
-                    margin: 5.65rem auto;
+                    margin: 3.8rem auto 0;
                     float: right;
+
+                    @include for-mobile {
+                        margin: 0 auto 2.65rem;
+                        width: auto;
+                    }
+
+                    @include for-tablet {
+                        margin: 0 auto 2.65rem;
+                        width: auto;
+                    }
                     h2 {
                         margin: 1.25rem 0;
                         font-family: 'Simonetta', sans-serif;
@@ -50,26 +60,49 @@
                         @include px-for-rem(70, line-height);
                         text-align: end;
                         color: $black-medium;
-                    }
+                        
+                        @include for-mobile {
+                            margin: 1.25rem .5rem 0;
+                            @include px-for-rem(55, font-size);
+                        }
+                        
+                        @include for-mobile-320 {
+                            @include px-for-rem(44, font-size);
+                        }
+
+                        @include for-tablet {
+                            margin: 1.25rem .5rem 0;
+                            @include px-for-rem(50, font-size);
+                            @include px-for-rem(54, line-height);
+                        }
+                    }    
                     h3 {
                         font-family: 'Roboto', sans-serif;
                         @include px-for-rem(14, font-size);
                         font-weight: lighter;
                         text-align: end;
                         color: $black-medium;
+
+                        @include for-mobile {
+                            @include px-for-rem(8, margin-right);
+                        }
                     }
                 }
             }
             &__image {
                 width: 50%;
                 height: auto;
-                @include transform(translateY(-1.625rem));
+                @include transform(translateY(-1rem));
+                
+                @include for-mobile {
+                    width: 100%;
+                    @include transform(translateY(2.375rem));
+                }
                 &-item {
                     display: none;
                     > img {
                         width: 100%;
                         height: auto;
-                        @include animation(animationZoom 1.05s ease-out);
                     }
                 }
                 .active {
@@ -80,10 +113,20 @@
                 }
                 &-mini-slider {
                     position: absolute;
-                    @include px-for-rem(-68, bottom);
+                    @include px-for-rem(-56, bottom);
                     @include px-for-rem(2, right);
-                    width: 18%;
+                    @include px-for-rem(240, width);
                     height: auto;
+                    
+                    @include for-mobile {
+                        @include px-for-rem(-64, bottom);
+                        @include px-for-rem(200, width);
+                    }
+
+                    @include for-tablet {
+                        @include px-for-rem(-68, bottom);
+                        @include px-for-rem(200, width);
+                    }
                     &__product {
                         width: 100%;
                         background: #f5f5f5;
@@ -137,7 +180,7 @@
                             @include px-for-rem(22, font-size);
                             font-weight: bold;
                             color: $gray-lighter;
-                            cursor: pointer;
+                            cursor: pointer;   
                         }
                         &-next {
                             transition: 0.5s;
@@ -149,8 +192,7 @@
                                 stroke: $white;
                                 @include transform(rotate(180deg));
                             }
-                            &:hover,
-                            &:focus {
+                            &:hover {
                                 opacity: 0.82;
                                 @include transition(.6s opacity);
                             }
@@ -179,6 +221,7 @@
         }
     }
     &__shelf {
+        position: relative;
         @include px-for-rem(80, padding-bottom);
         width: 100%;
         background: $ice;
@@ -186,6 +229,28 @@
             margin: 30rem auto 0;
             @include px-for-rem(1080, max-width);
             height: 100%;
+            > h2 {
+                position: absolute;
+                @include px-for-rem(-124, top);
+                @include px-for-rem(144, right);
+                font-family: 'Roboto', sans-serif;
+                @include px-for-rem(125, font-size);
+                text-transform: uppercase;
+                color: #e3e3e3;
+
+                @include for-mobile {
+                    margin: 0;
+                    @include px-for-rem(120, top);
+                    @include px-for-rem(10, right);
+                    @include px-for-rem(62, font-size);
+                }
+
+                @include for-tablet {
+                    @include px-for-rem(0, top);
+                    @include px-for-rem(12, right);
+                    @include px-for-rem(68, font-size);
+                }
+            }
             > h3 {
                 font-family: 'Simonetta', sans-serif;
                 @include px-for-rem(60, font-size);
@@ -194,29 +259,58 @@
                 @include px-for-rem(2, letter-spacing);
                 @include px-for-rem(0, line-height);
                 color: $black-medium;
+
+                @include for-mobile {
+                    @include px-for-rem(38, margin-bottom);
+                    text-align: center;
+                }
+
+                @include for-tablet {
+                    @include transform(translateX(1.25rem) !important);
+                }
             }
-            p {
+            > p {
                 @include px-for-rem(80, margin-bottom);
                 font-family: 'Roboto', sans-serif;
-                @include px-for-rem(14, font-size);
                 font-weight: lighter;
                 line-height: 0;
                 color: $black-medium;
+                @include for-mobile {
+                    @include px-for-rem(128, margin-bottom);
+                    text-align: center;
+                    line-height: normal;
+                }
+
+                @include for-tablet {
+                    @include transform(translateX(1.25rem) !important);
+                }
                 > strong {
                     font-family: 'Simonetta', sans-serif;
                     text-transform: uppercase;
                     color: $beige;
+                    &:hover {
+                       text-decoration: line-through;
+                    }
                 }
             }
             &__row {
                 display: flex;
                 margin: 1.5rem 0;
                 width: 100%;
+
+                @include for-mobile {
+                    display: inline;
+                }
                 &-product {
                     position: relative;
                     margin: 0 .625rem;
                     width: 33.3%;
                     background: #f5f5f5;
+                    
+                    @include for-mobile {
+                        width: 92%;
+                        margin: 1.4rem auto;
+                    }
                     &:hover {
                         @include transform(translateY(-.6000rem) !important);
                         @include transition(.85s transform);
@@ -307,6 +401,10 @@
                 width: 50%;
                 height: 100%;
                 background: $white;
+
+                @include for-mobile {
+                    width: 64%;
+                }
                 &-content {
                     h3 {
                         font-family: 'Simonetta', sans-serif;
@@ -317,6 +415,14 @@
                         @include px-for-rem(2, letter-spacing);
                         line-height: 0;
                         color: $black-medium;
+
+                        @include for-mobile {
+                            margin: 9.75rem 0 0;
+                            @include transform(translateX(.625rem) !important);
+                            @include px-for-rem(42, font-size);
+                            text-align: left;
+                            line-height: normal;
+                        }
                     }
                     p {
                         font-family: 'Roboto', sans-serif;
@@ -324,10 +430,24 @@
                         font-weight: lighter;
                         line-height: 0;
                         color: $black-medium;
+
+                        @include for-mobile {
+                            line-height: normal;
+                            @include transform(translateX(.625rem) !important);
+                        }
+                        
+                        @include for-tablet {
+                            text-align: center;
+                            line-height: normal;
+                            @include transform(translateX(.625rem) !important);
+                        }
                         > strong {
                             font-family: 'Simonetta', sans-serif;
                             text-transform: uppercase;
                             color: $beige;
+                            &:hover {
+                                text-decoration: line-through;
+                            }
                         }
                     }
                 }
@@ -336,9 +456,30 @@
                 width: 50%;
                 height: 100%;
                 background: $white;
+
+                @include for-mobile {
+                    width: 0;
+                }
                 > img {
                     @include transform(translateY(1rem));
                     width: 72%;
+                    
+                    @include for-mobile {
+                        position: absolute;
+                        right: -32%;
+                        @include px-for-rem(298, width);
+                        @include transform(translate(-8.375rem, -4.25rem) !important);
+                    }
+                    
+                    @include for-mobile-320 {
+                        right: -42%;
+                        @include px-for-rem(238, width);
+                    }
+
+                    @include for-tablet {
+                        width: 82%;
+                        @include transform(translateY(2rem) !important);
+                    }
                 }
             }
         }
@@ -349,17 +490,59 @@
                 margin: 0 auto;
                 @include px-for-rem(1080, max-width);
                 &-products {
+                    position: relative;
                     @include px-for-rem(230, padding-top);
                     @include px-for-rem(80, padding-bottom);
+
+                    @include for-mobile {
+                        @include px-for-rem(66, padding-top);
+                    }
+
+                    @include for-tablet {
+                        @include px-for-rem(76, padding-top);
+                    }
+                    > h2 {
+                        position: absolute;
+                        @include px-for-rem(-20, top);
+                        @include px-for-rem(10, left);
+                        font-family: 'Roboto', sans-serif;
+                        @include px-for-rem(125, font-size);
+                        text-transform: uppercase;
+                        color: #e3e3e3;
+
+                        @include for-mobile {
+                            margin: 1.125rem .5rem 0;
+                            @include px-for-rem(62, font-size);
+                        }
+                        
+                        @include for-tablet {
+                            margin: 1.5rem 0;
+                            @include px-for-rem(62, font-size);
+                            @include transform(translateX(.9375rem) !important);
+                        }
+                    }
                     &__row {
                         margin: 0.3rem 0;
                         display: flex;
                         justify-content: center;
                         align-items: center;
+
+                        @include for-mobile {
+                            display: inline;
+                        }
                         &-col {
                             position: relative;
                             margin: .625rem;
                             width: 33.3%;
+
+                            @include for-mobile {
+                                margin: 1.625rem auto;
+                                width: 92%;
+                            }
+
+                            @include for-tablet {
+                                width: 29.3%;
+                            }
                             background: $white;
                             &:hover {
                                 @include transform(translateY(-.6000rem) !important);
@@ -425,8 +608,8 @@
                                     color: $white;
                                     cursor: pointer;
                                     &:hover {
-                                        opacity: 0.92;
-                                        @include transition(.4s opacity);
+                                        opacity: 0.82;
+                                        @include transition(.6s opacity);
                                         animation: animationShake .65s;
                                     }
                                 }
@@ -444,6 +627,11 @@
             margin: 0 auto;
             @include px-for-rem(440, width);
             @include px-for-rem(440, max-width);
+
+            @include for-mobile {
+                width: 100%;
+                max-width: 100%;
+            }
             &__instruction {
                 @include px-for-rem(40, padding-top);
                 h4 {
@@ -454,6 +642,14 @@
                     text-align: center;
                     @include px-for-rem(2, letter-spacing);
                     color: $black-medium;
+
+                    @include for-mobile {
+                        @include px-for-rem(36, font-size);
+                    }
+                    
+                    @include for-mobile-320 {
+                        @include px-for-rem(28, font-size);
+                    }
                 }
                 p {
                     font-family: 'Roboto', sans-serif;
@@ -497,6 +693,14 @@
                             font-family: 'Roboto', sans-serif;
                             @include px-for-rem(14, font-size);
                             color: $gray;
+                            
+                            @include for-mobile {
+                                @include px-for-rem(250, width);
+                            }
+                            
+                            @include for-mobile-320 {
+                                @include px-for-rem(192, width);
+                            }
                         }
                         button {
                             @include px-for-rem(12, padding-top);
@@ -535,6 +739,10 @@
             &__blog-instruction {
                 @include px-for-rem(580, max-width);
                 margin: 2.5rem auto;
+
+                @include for-mobile {
+                    padding: 0 1.25rem;
+                }
                 h5 {
                     margin: 0;
                     font-family: 'Simonetta', sans-serif;
@@ -543,6 +751,14 @@
                     text-transform: uppercase;
                     text-align: center;
                     color: $black-medium;
+                    
+                    @include for-mobile {
+                        @include px-for-rem(36, font-size);
+                    }
+
+                    @include for-mobile-320 {
+                        @include px-for-rem(28, font-size);
+                    }
                 }
                 p {
                     font-family: 'Roboto', sans-serif;
@@ -565,12 +781,32 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+
+                    @include for-mobile {
+                        display: inline;
+                    }
                     &__card {
                         @include px-for-rem(320, width);
                         @include px-for-rem(6, margin);
+                        
+                        @include for-mobile {
+                            margin: 0 0 1.375rem;
+                        }
+                        
+                        @include for-mobile-320 {
+                            @include px-for-rem(268, width);
+                        }
+
+                        @include for-tablet {
+                            width: 30%;
+                        }
                         &-image {
                             @include px-for-rem(280, height);
                             overflow: hidden;
+
+                            @include for-tablet {
+                                @include px-for-rem(240, height);
+                            }
                             img {
                                 width: 100%;
                                 height: 100%;
@@ -588,12 +824,24 @@
                                 position: relative;
                                 padding: 1.25rem;
                                 @include px-for-rem(136, height);
+                                
+                                @include for-tablet {
+                                    @include px-for-rem(166, height);
+                                }
                                 h6.b-title-post {
                                     margin: 0;
                                     font-family: 'Roboto', sans-serif;
                                     @include px-for-rem(14, font-size);
                                     font-weight: 600;
                                     color: $black-medium;
+                                    
+                                    @include for-mobile-320 {
+                                        @include px-for-rem(12, font-size);
+                                    }
+
+                                    @include for-tablet {
+                                        @include px-for-rem(12, font-size);
+                                    }
                                 }
                                 p.b-author-post {
                                     font-family: 'Roboto', sans-serif;
@@ -608,6 +856,14 @@
                                     font-weight: lighter;
                                     text-align: end;
                                     color: $black-medium;
+
+                                    @include for-mobile-320 {
+                                        @include px-for-rem(12, font-size);
+                                    }
+
+                                    @include for-tablet {
+                                        @include px-for-rem(12, font-size);
+                                    }
                                 }
                                 a {
                                     display: flex;
