@@ -1,5 +1,5 @@
 //Function to open search bar of header
-const furniture_OpenSearchBar = () => {
+const funiture_OpenSearchBar = () => {
     let search = document.querySelector("#search");
 
     search.addEventListener("click", () => {
@@ -8,7 +8,7 @@ const furniture_OpenSearchBar = () => {
 };
 
 //Function to close search bar of header
-const furniture_CloseSearchBar = () => {
+const funiture_CloseSearchBar = () => {
     document.addEventListener("keyup", (ev) => {
         switch (ev.key) {
             case "Escape":
@@ -21,6 +21,6 @@ const furniture_CloseSearchBar = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    furniture_OpenSearchBar();
-    furniture_CloseSearchBar();
+    funiture_OpenSearchBar();
+    funiture_CloseSearchBar();
 });
