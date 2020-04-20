@@ -46,6 +46,10 @@
                     padding: 0;
                     @include px-for-rem(0, margin-right);
                 }
+                
+                @include for-tablet {
+                    @include px-for-rem(28, margin-right);
+                }
                 h6 {
                     @include px-for-rem(0, margin-top);
                     @include px-for-rem(14, margin-bottom);
