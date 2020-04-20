@@ -2,10 +2,19 @@
 @import "./layouts/globals/_fonts";
 @import "./layouts/globals/_mixins";
 @import "./layouts/globals/__colors";
+
 .b-backbutton {
     position: fixed;
     @include px-for-rem(22, right);
     @include px-for-rem(-64, bottom);
+
+    @include for-mobile {
+        z-index: 99;
+    }
+
+    @include for-tablet {
+        z-index: 99;
+    }
     button {
         @include px-for-rem(8, padding);
         background: $beige;
