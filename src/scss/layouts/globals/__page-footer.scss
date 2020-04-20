@@ -1,16 +1,51 @@
 @import "./__mixins";
 @import "./__colors";
 @import "./_fonts";
+
 .b-footer-container {
+    position: relative;
     width: 100%;
     @include px-for-rem(30, padding-top);
     background: $white;
+
+    .b-image-decoration {
+        position: absolute;
+        @include px-for-rem(0, bottom);
+        @include px-for-rem(0, right);
+        @include px-for-rem(460, width);
+        @include filter(drop-shadow(.275rem 1rem .075rem $gray-lighter));
+        z-index: 9;
+        
+        @include for-mobile {
+            display: none;
+        }
+    
+        @include for-tablet {
+            display: none
+        }
+    }
     &__institucional {
         display: flex;
         justify-content: center;
         align-items: center;
+        @include transform(translateX(-7.2625rem));
+        
+        @include for-mobile {
+            display: inline;
+            text-align: center;
+        }
+        
+        @include for-tablet {
+            @include transform(translateX(0rem));
+        }
         &-item {
             ul {
+                @include px-for-rem(44, margin-right);
+                
+                @include for-mobile {
+                    padding: 0;
+                    @include px-for-rem(0, margin-right);
+                }
                 h6 {
                     @include px-for-rem(0, margin-top);
                     @include px-for-rem(14, margin-bottom);
@@ -47,6 +82,15 @@
         align-items: center;
         width: 70%;
         h6 {
+            @include transform(translateX(-3.8625rem));
+            
+            @include for-mobile {
+                @include transform(translateX(0rem));
+            }
+
+            @include for-tablet {
+                @include transform(translateX(0rem));
+            }
             a {
                 font-family: 'Simonetta', cursive;
                 @include px-for-rem(22, font-size);
