@@ -1,7 +1,30 @@
+@import '../globals/__mixins';
+
 .b-header-container {
     width: 100%;
     height: auto;
     &__institucional {
+        h2.b-author {
+            position: absolute;
+            @include px-for-rem(-13, top);
+            @include px-for-rem(16, left);
+            
+            @include for-mobile-320 {
+                @include px-for-rem(-17, top);
+            }
+            a {
+                font-family: 'Pacifico', cursive;
+                @include px-for-rem(16, font-size);
+                font-weight: lighter;
+                text-decoration: none;
+                color: $gray;
+
+                @include for-mobile-320 {
+                    @include px-for-rem(12, font-size);
+               }
+            }
+            
+        }
         width: 100%;
         @include px-for-rem(40, height);
         background: $ice;
@@ -10,35 +33,39 @@
                 display: flex;
                 float: right;
                 margin: 0;
-                @include transform(translateY(10px));
+                @include transform(translateY(.625rem));
                 li {
                         text-decoration: none;
                         margin: 0 .625rem;
+                        
+                        @include for-mobile-320 {
+                            margin: 0 .350rem;
+                        }
                         &:nth-child(1) {
                             svg {
-                                width: 20px;
-                                height: 20px;
+                                @include px-for-rem(20, width);
+                                @include px-for-rem(20, height);
                             }
                         }
                         &:nth-child(2) {
                             svg {
-                                width: 19px;
-                                height: 19px;
+                                @include px-for-rem(19, width);
+                                @include px-for-rem(19, height);
                             }
                         }
                         &:nth-child(3) {
                             svg {
-                                width: 17px;
-                                height: 17px;
+                               @include px-for-rem(17, width);
+                               @include px-for-rem(17, height);
                             }
                         }
                         &:nth-child(4) {
                             a{
                                 text-decoration: none;
                                 svg {
-                                    width: 19px;
-                                    height: 19px;
-                                    @include transform(translateY(-2px));
+                                    @include px-for-rem(19, width);
+                                    @include px-for-rem(19, height);
+                                    @include transform(translateY(-.125rem));
                                 }
                             }
                             span.b-qtd-cart {
@@ -55,6 +82,9 @@
                     svg {
                         fill: $gray;
                         cursor: pointer;
+                        &:hover {
+                            @include animation(animationShake .75s);
+                        }
                     }
                 }
             }
@@ -64,7 +94,7 @@
         position: absolute;
         top: 0;
         width: 100%;
-        @include transform(translateY(-240px));
+        @include transform(translateY(-15rem));
         @include px-for-rem(50, height);
         background: $white-light;
         &-content {
@@ -78,11 +108,19 @@
                     width: 100%;
                     @include px-for-rem(50, height);
                     @include px-for-rem(80, padding-left);
+                    
+                    @include for-mobile {
+                        @include px-for-rem(0, padding-left);
+                    }
                 }
                  ::-webkit-input-placeholder {
-                    @include px-for-rem(20, font-size);
-                    text-align: center;
-                    color: $gray-lighter;
+                     @include px-for-rem(20, font-size);
+                     text-align: center;
+                     color: $gray-lighter;
+                     
+                     @include for-mobile {
+                        @include px-for-rem(12, font-size);
+                    }
                 }
                 button {
                     @include px-for-rem(240, width);
@@ -91,9 +129,17 @@
                     border: none;
                     outline: none;
                     font-family: 'Roboto', sans-serif;
-                    font-size: 14px;
+                    @include px-for-rem(14, font-size);
                     color: $white;
                     cursor: pointer;
+
+                    @include for-mobile {
+                        @include px-for-rem(180, width);
+                    }
+
+                    @include for-mobile-320 {
+                        @include px-for-rem(150, width);
+                    }
                 }
             }
         }
@@ -103,11 +149,19 @@
         top: 0;
         right: 0;
         @include px-for-rem(400, width);
-        @include transform(translateX(400px));
+        @include transform(translateX(25rem));
         height: 100%;
         background: $white;
-        box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.3);
-        z-index: 99;
+        box-shadow: 0 .3125rem .3125rem .125rem rgba(0, 0, 0, 0.3);
+        z-index: 999;
+
+        @include for-mobile {
+            @include px-for-rem(340, width);
+        }
+        
+        @include for-mobile-320 {
+            @include px-for-rem(260, width);
+        }
         &-content {
             position: absolute;
             top: 0;
@@ -162,6 +216,10 @@
                             @include px-for-rem(12, margin-left);
                             @include px-for-rem(92, width);
                             background: $ice;
+                            
+                            @include for-mobile {
+                                @include px-for-rem(72, width);
+                            }
                             img {
                                 position: relative;
                                 top: 50%;
@@ -176,6 +234,14 @@
                                 @include px-for-rem(14, font-size);
                                 font-weight: lighter;
                                 color: $black-medium;
+
+                                @include for-mobile {
+                                    @include px-for-rem(11, font-size);
+                                }
+
+                                @include for-mobile-320 {
+                                    @include px-for-rem(9, font-size);
+                                }
                             }
                         }
                         &-price {
@@ -185,6 +251,11 @@
                                 @include px-for-rem(14, font-size);
                                 font-weight: lighter;
                                 color: $gray-light;
+                                
+                                @include for-mobile-320 {
+                                    @include px-for-rem(11, font-size);
+                                }
+
                             }
                         }
                     }
@@ -217,6 +288,9 @@
                 justify-content: center;
                 @include px-for-rem(10, padding);
                 width: 100%;
+                @include for-mobile {
+                    @include px-for-rem(21, padding);
+                }
                 > a {
                     font-family: 'Roboto', sans-serif;
                     @include px-for-rem(12, font-size);
@@ -262,6 +336,7 @@
         }
     }
     &__departments {
+        position: relative;
         width: 100%;
         @include px-for-rem(164, height);
         background: $white;
@@ -271,26 +346,89 @@
         > div {
             display: flex;
             justify-content: center;
+
+            @include for-mobile {
+                display: inline;
+            }
+
+            @include for-tablet {
+                display: inline;
+            }
             nav {
+
+                @include for-mobile {
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    @include transform(translateX(24.25rem));
+                    @include px-for-rem(310, width);
+                    height: 100vh;
+                    background: #d5d5d5;
+                    z-index: 99;
+                }
+
+                @include for-mobile-320 {
+                    @include px-for-rem(260, width);
+                }
+
+                @include for-tablet {
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    @include transform(translateX(37.5rem));
+                    @include px-for-rem(440, width);
+                    height: 110vh;
+                    background: #d5d5d5;
+                    z-index: 99;
+                }
                 ul {
                     display: flex;
+
+                    @include for-mobile {
+                        display: inline;
+                    }
                     li {
-                        margin: 0 .925rem;
+                        
+                        @include for-mobile {
+                            margin: 0 .925rem 1.5rem;
+                        }
+
+                        @include for-tablet {
+                            margin: 0 .925rem 1.5rem;
+                        }
                         a {
                             font-family: 'Roboto', sans-serif;
                             font-size: 16px;
                             text-decoration: none;
                             color: $gray;
+
+                            @include for-mobile {
+                                @include px-for-rem(18, font-size);
+                            }
+
+                            @include for-tablet {
+                                @include px-for-rem(32, font-size);
+                            }
                         }
                     }
                 }
             }
         }
         &-brand {
+
+            @include for-mobile {
+                position: relative;
+                top: 14px;
+            }
+
+            @include for-tablet {
+                position: relative;
+                top: 14px;
+            }
             a {
-                @include transform(translateY(6px));
+                @include transform(translateY(.375rem));
                 font-family: 'Simonetta', sans-serif;
-                font-size: 26px;
+                @include px-for-rem(26, font-size);
                 font-weight: bold;
                 text-transform: uppercase;
                 text-decoration: none;
@@ -300,7 +438,25 @@
         &-menu {
             nav {
                 ul {
+
+                    @include for-mobile {
+                        display: flex!important;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        @include transform(translateY(4.875rem));
+                    }
+                    
+                    @include for-tablet {
+                        display: flex!important;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        @include transform(translateY(4.875rem));
+                    }
                     li {
+                        margin: 0 .925rem;
+                        z-index: 99;
                         &:first-of-type {
                             a {
                                 font-weight: bold;
@@ -308,10 +464,18 @@
                                 &::after {
                                     content: "";
                                     display: block;
-                                    @include transform(translateY(-2px));
+                                    @include transform(translateY(-.125rem));
                                     width: 120%;
-                                    height: 8px;
+                                    @include px-for-rem(8, height);
                                     background: $beige;
+
+                                    @include for-mobile {
+                                        display: none;
+                                    }
+
+                                    @include for-tablet {
+                                        display: none;
+                                    }
                                 }
                             }
                         }
@@ -321,6 +485,65 @@
                             }
                         }
                     }
+                }
+                .b-close {
+                    display: none;
+                    position: absolute;
+                    @include px-for-rem(20, top);
+                    @include px-for-rem(18, right);
+
+                    @include for-mobile {
+                        display: block;
+                    }
+                    @include for-tablet {
+                        display: block;
+                    }
+                    > h6 {
+                        margin: 0;
+                        font-family: 'Roboto', sans-serif;
+                        @include px-for-rem(22, font-size);
+                        font-weight: lighter;
+                        color: $gray;
+                        
+                        @include for-mobile {
+                            @include px-for-rem(18, font-size);
+                        }
+                    }
+                }
+            }
+        }
+        &-hamburguer {
+            display: none !important;
+            position: absolute;
+            @include px-for-rem(24, top);
+            @include px-for-rem(10, right);
+
+            @include for-mobile {
+                display: flex !important;
+                align-items: center;
+                @include px-for-rem(14, height);
+            }
+
+            @include for-tablet {
+                display: flex !important;
+                align-items: center;
+                @include px-for-rem(14, height);
+            }
+            > span {
+                &::before {
+                    content: '';
+                    display: block;
+                    @include px-for-rem(40, width);
+                    @include px-for-rem(2, height);
+                    background: $gray-lighter;
+                }
+                &::after {
+                    content: '';
+                    display: block;
+                    @include px-for-rem(30, width);
+                    @include px-for-rem(2, height);
+                    @include transform(translateY(.3125rem));
+                    background: $gray-lighter;
                 }
             }
         }
