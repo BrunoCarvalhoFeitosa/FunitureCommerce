@@ -10,6 +10,9 @@ const funiture_OpenMiniCart = () => {
     for (let i = 0; i < buttonBuy.length; i++) {
         buttonBuy[i].addEventListener("click", () => {
             document.querySelector(".b-header-container__minicart").classList.add("is--active-minicart");
+            setTimeout(() => {
+                document.querySelector(".b-header-container__minicart").classList.remove("is--active-minicart");
+            }, 6000);
         });
     };
 }
