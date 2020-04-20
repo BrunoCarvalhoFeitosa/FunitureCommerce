@@ -2,9 +2,12 @@
 @import "./_mixins";
 body,
 html {
+    width: 100%;
+    max-width: 100%;
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
+    overflow-x: hidden;
     ul {
         list-style: none;
     }
@@ -55,7 +58,7 @@ html {
     }
     @keyframes animationFloat {
         50% {
-            transform: translateY(90px);
+            transform: translateY(26px);
         }
         100% {
             transform: translateY(0px);
@@ -77,6 +80,10 @@ html {
     }
     .is--active-header {
         position: fixed;
+    }
+    .is--active-nav {
+        @include transform(translateX(0%) !important);
+        @include transition(1s transform ease-in);
     }
     .is--actice-zoom {
         @include animation(animationZoom 1.05s ease-out);
