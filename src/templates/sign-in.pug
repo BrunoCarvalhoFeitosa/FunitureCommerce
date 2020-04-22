@@ -1,0 +1,62 @@
+doctype html
+html(lang="pt-br")
+    head
+        meta(charset="UTF-8")/
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")/
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")/
+        meta(name="author", content="Bruno Carvalho Feitosa")/
+        meta(name="description", content="Cadastre-se no E-commerce Tok D'Art e tenha acesso às melhores promoções de venda de móveis para sala, cozinha e quarto")/
+        meta(name="keywords", content="Cadastre-se, E-commerce, Tok D'Art, Melhores promoções, venda, móveis, sala, cozinha, quarto")/
+        link(rel="stylesheet", type="text/css", href="css/sign-in.css")/
+        link(rel="icon", type="image/png", href="/images/fav.png")/
+        title Cadastre-se na Tok D'Art e compro móveis com descontos especiais
+    body
+
+    div.b-brand
+        h2
+            a(href="/") Tok D'Arte
+
+    section.b-register#container
+        div.b-register__form.sign-up-container
+            form.b-form(action="", method="POST")
+                h1 Crie sua conta
+                div.b-form__social-container
+                    a(href="#")
+                        i.fab.fa-facebook-f
+                    a(href="#")
+                        i.fab.fa-google-plus-g
+                    a(href="#")
+                        i.fab.fa-linkedin-in
+                span ou use seu e-mail para cadastramento
+                input(type="text", placeholder="Nome", required="required")
+                input(type="email", placeholder="E-mail", required="required")
+                input(type="password", placeholder="Senha", required="required")
+                button.b-create(type="submit") Cadastrar agora
+        div.b-register__form.sign-in-container
+            form.b-form(action="", method="POST")
+                h1 Já sou cadastrado
+                div.b-form__social-container
+                    a(href="#")
+                        i.fab.fa-facebook-f
+                    a(href="#")
+                        i.fab.fa-google-plus-g
+                    a(href="#")
+                        i.fab.fa-linkedin-in
+                span ou use sua conta
+                input(type="email", placeholder="E-mail", required="required")
+                input(type="password", placeholder="Senha", required="required")
+                a.b-lost-pass(href="#") Perdeu sua senha?
+                button.b-login(type="submit") Entrar agora
+        div.b-register__overlay-container
+            div.b-register__overlay-container-overlay
+                div.b-register__overlay-container-overlay__panel.overlay-left
+                    h1 Bem-vindo
+                    p Para manter-se conectado conosco, por favor entre com suas informações pessoais.
+                    button.b-ghost#signIn(type="button") Entrar agora
+                div.b-register__overlay-container-overlay__panel.overlay-right
+                    h1 Olá, amigo(a)
+                    p Para manter-se conectado conosco, por favor cadastre-se gratuitamente e tenha acesso as melhores promoções.
+                    button.b-ghost#signUp(type="button") Cadastrar-me agora
+
+    script(src="../js/sign-in.js")
+    script(src="https://kit.fontawesome.com/182b2e8882.js", crossorigin="anonymous")        

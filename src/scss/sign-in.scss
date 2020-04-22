@@ -1,0 +1,241 @@
+@import "./layouts/globals/_globals";
+@import "./layouts/globals/_fonts";
+@import "./layouts/globals/_mixins";
+@import "./layouts/globals/__colors";
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: $white;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-family: 'Simonetta', sans-serif;
+    @include px-for-rem(20, font-size);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $black;
+}
+
+p {
+    margin: 1.25rem 0 1.875rem;
+    font-family: 'Roboto', sans-serif;
+    @include px-for-rem(16, font-size);
+    font-weight: lighter;
+    @include px-for-rem(0.5, letter-spacing);
+}
+
+> span {
+    @include px-for-rem(12, font-size);
+}
+
+button {
+   background: $beige;
+   width: 100%;
+   padding: .75rem 2.8125rem;
+   @include px-for-rem(14, font-size);
+   font-weight: bold;
+   text-transform: uppercase;
+   color: $white;
+   cursor: pointer;
+   &:hover {
+       opacity: 0.82;
+       @include transition(.55s opacity);
+   }
+}
+button.b-create {
+    @include px-for-rem(5, margin-top);
+}
+button.b-ghost {
+    background: transparent;
+    border: .0625rem solid $white;
+}
+
+.b-brand {
+    position: absolute;
+    top: 0;
+    @include px-for-rem(26, left);
+    
+    h2 {
+        a {
+            font-family: 'Simonetta', sans-serif;
+            @include px-for-rem(26, font-size);
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $black-medium;
+        }
+    }
+}
+
+.b-register {
+    position: relative;
+    @include px-for-rem(920, width);
+    max-width: 100%;
+    @include px-for-rem(480, height);
+    background: $white;
+    box-shadow: 0 .875rem 1.75rem rgba(0, 0, 0, 0.25), 0 .625rem .625rem rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+    &__form {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        @include transition(all .55s ease-in-out);
+        .b-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 3.125rem;
+            height: 100%;
+            &__social-container {
+                margin: 0 0 1.25rem;
+                 a {
+                    margin: 0 .3125rem;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: .0625rem dashed $gray-lighter;
+                    border-radius: 50%;
+                    @include px-for-rem(40, width);
+                    @include px-for-rem(40, height);
+                    color: $black-medium;
+                    text-decoration: none;
+                    i.fa-google-plus-g {
+                        @include transform(scale(1.13));
+                    }
+                    &:hover {
+                        border: .0625rem dashed $beige;
+                        @include transition(1s border);
+                        i.fa-facebook-f {
+                            @include transform(rotateX(360deg));
+                            @include transition(1s transform);
+                            color: $beige;
+                        }
+                        i.fa-google-plus-g {
+                            color: $beige;
+                        }   
+                        i.fa-linkedin-in {
+                            @include transform(rotateY(360deg));
+                            @include transition(1s transform);
+                            color: $beige;
+                        }
+                    }
+                }
+            }
+            span {
+                @include px-for-rem(16, font-size);
+                color: $black-medium;
+            }
+            input {
+                background: $ice;
+                border: none;
+                margin: .5rem 0;
+                width: 100%;
+                padding: .75rem .9375rem;
+                font-family: 'Roboto', sans-serif;
+                @include px-for-rem(14, font-size);
+                color: $gray;
+            }
+            ::-webkit-input-placeholder {
+                font-family: 'Roboto', sans-serif;
+                @include px-for-rem(16, font-size);
+                color: $gray;
+            }
+             a.b-lost-pass {
+                margin: .9375rem .3125rem;
+                @include px-for-rem(14, font-size);
+                text-decoration: none;
+                color: #333;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .sign-in-container {
+        position: relative;
+        left: 0;
+        width: 50%;
+        z-index: 2;
+    }
+    .sign-up-container {
+        left: 0;
+        width: 50%;
+        opacity: 0;
+        z-index: 1;
+    }
+    &__overlay-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        transition: all .55s ease-in-out;
+        z-index: 100;
+        &-overlay {
+            background: rgb(179,159,152);
+            background: linear-gradient(to right, rgba(179,159,152,0.958420868347339) 55%, #E8CBC0 100%) no-repeat 0 0 / cover;
+            position: relative;
+            left: -100%;
+            height: 100%;
+            width: 200%;
+            @include transform(translateX(0));
+            @include transition(transform .55s ease-in-out);
+            &__panel {
+                position: absolute;
+                top: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 0 2.5rem;
+                width: 50%;
+                height: 100%;
+                text-align: center;
+                @include transform(translateX(0));
+                @include transition(transform .55s ease-in-out);
+            }
+            .overlay-right {
+                right: 0;
+                @include transform(translateX(0));
+            }
+            .overlay-left {
+                @include transform(translateX(-20%));
+            }
+        }
+    }  
+}
+
+.is--right-panel-active .sign-in-container {
+    @include transform(translateX(100%));
+}
+
+.is--right-panel-active .b-register__overlay-container {
+    @include transform(translateX(-100%));
+}
+
+.is--right-panel-active .sign-up-container {
+    @include transform(translateX(100%));
+    opacity: 1;
+    z-index: 5;
+    position: relative;
+}
+
+.is--right-panel-active .b-register__overlay-container-overlay {
+    @include transform(translateX(50%));
+}
+
+.is--right-panel-active .overlay-left {
+    @include transform(translateX(0%));
+}
