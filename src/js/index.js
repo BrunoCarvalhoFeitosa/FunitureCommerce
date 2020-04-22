@@ -128,6 +128,16 @@ const funiture_AnimationTimeline = () => {
         delay: (el, i) => 700 * i,
         offset: '-=300',
     }).add({
+        targets: '.b-container__promotion-cards h2',
+        opacity: [0, 1],
+        translateX: [-100, 0],
+        offset: '-=150'
+    }).add({
+        targets: '.b-container__promotion-cards-container__about',
+        opacity: [0, 1],
+        translateX: [-100, 0],
+        offset: '-=150'
+    }).add({
         targets: '.b-container__shelf-content h2',
         opacity: [0, 1],
         translateY: [80, 0],
@@ -232,7 +242,7 @@ const funiture_AnimationTimeline = () => {
         opacity: [0, 1],
         translateY: [60, 0],
     })
-}    
+};
 
 document.addEventListener("DOMContentLoaded", () => {
     funiture_CarouselHome();
