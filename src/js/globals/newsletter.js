@@ -1,5 +1,5 @@
 //Function to animate label form newsletter
-const furniture_Newsletter = () => {
+const funiture_Newsletter = () => {
     let label = document.querySelector(".b-form-group > label");
     let input = document.querySelector(".b-form-group input[type=email]");
 
@@ -10,5 +10,5 @@ const furniture_Newsletter = () => {
 
 //Function to execute in batch all other function in load of page
 document.addEventListener("DOMContentLoaded", () => {
-    furniture_Newsletter();
+    funiture_Newsletter();
 });

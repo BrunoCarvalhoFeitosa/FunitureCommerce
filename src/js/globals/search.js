@@ -20,6 +20,7 @@ const funiture_CloseSearchBar = () => {
     });
 };
 
+//Function to execute in batch all other function in load of page
 document.addEventListener("DOMContentLoaded", () => {
     funiture_OpenSearchBar();
     funiture_CloseSearchBar();

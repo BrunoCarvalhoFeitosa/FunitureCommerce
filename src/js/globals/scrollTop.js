@@ -1,5 +1,5 @@
 //Function to back top of page
-const furniture_BackTop = () => {
+const funiture_BackTop = () => {
     let backButton = document.querySelector(".b-buttonback");
 
     if (document.body.scrollTop > 4000 || document.documentElement.scrollTop > 4000) {
@@ -16,5 +16,5 @@ const furniture_BackTop = () => {
 
 //Function to execute back to top in scroll of page
 window.onscroll = () => {
-    furniture_BackTop();
+    funiture_BackTop();
 }
