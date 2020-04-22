@@ -41,8 +41,12 @@
         width: 100%;
         box-sizing: border-box;
         font-family: 'Roboto', sans-serif;
-        @include px-for-rem(14, font-size);
+        @include px-for-rem(12, font-size);
         color: $black-medium;
+        
+        @include for-mobile {
+            @include px-for-rem(10, font-size);
+        }
         &-product {
             display: flex;
             justify-content: space-between;
@@ -52,10 +56,19 @@
                 @include px-for-rem(200, width);
                 @include px-for-rem(130, height);
                 background: $ice;
+                
+                @include for-mobile {
+                    @include px-for-rem(92, width);
+                    @include px-for-rem(84, height);
+                }
                 > img {
                     width: 100%;
                     @include px-for-rem(122, height);
                     cursor: pointer;
+                    
+                    @include for-mobile {
+                        @include px-for-rem(74, height);
+                    }
                     &:hover {
                         @include transform(scale(1.035));
                         @include transition(transform .2s ease-in);
@@ -64,6 +77,10 @@
                 &-name {
                     p {
                         @include px-for-rem(14, font-size);
+                        
+                        @include for-mobile {
+                            @include px-for-rem(11, font-size);
+                        }
                     }
                 }
             }
@@ -79,6 +96,10 @@
                         font-weight: bold;
                         color: $beige;
                         cursor: pointer;
+                        
+                        @include for-mobile {
+                            @include px-for-rem(14, font-size);
+                        }
                     }
                     &:nth-child(2) {
                         position: relative;
@@ -89,6 +110,10 @@
                         font-weight: bold;
                         color: $beige;
                         cursor: pointer;
+
+                        @include for-mobile {
+                            @include px-for-rem(14, font-size);
+                        }
                     }
                 }
             }
@@ -99,20 +124,33 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
+
+            @include for-mobile {
+                display: inline-block;
+            }
             &__text {
                 p {
                     font-weight: bold;
+
+                    @include for-mobile {
+                        @include px-for-rem(12, font-size);
+                    }
                 }
             }
             &__finally {
                 button {
                     padding: .625rem 2.875rem;
                     background: $beige;
+                    @include px-for-rem(14, font-size);
+                    font-family: 'Roboto', sans-serif;
                     font-weight: bold;
                     text-transform: uppercase;
-                    @include px-for-rem(1, letter-spacing);
                     color: $white;
                     cursor: pointer;
+
+                    @include for-mobile {
+                        width: 100%;
+                    }
                     &:hover {
                         opacity: .82;
                         @include transition(.6s opacity);
@@ -120,10 +158,20 @@
                 }
             }
             &__subtotal {
+
+                @include for-mobile {
+                    display: flex;
+                    justify-content: space-between;
+                }
                 h3.summary-title {
                     float: right;
                     @include px-for-rem(24, font-size);
                     @include px-for-rem(0, line-height);
+                    
+                    @include for-mobile {
+                        @include transform(translateY(1.125rem));
+                        @include px-for-rem(18, font-size);
+                    }
                 }
 
                 h3.summary-subtotal {
@@ -135,6 +183,10 @@
                         @include px-for-rem(6, top);
                         @include px-for-rem(32, font-size);
                         @include px-for-rem(14, line-height);
+                        
+                        @include for-mobile {
+                            @include px-for-rem(26, font-size);
+                        }
                     }
                 }
             }
