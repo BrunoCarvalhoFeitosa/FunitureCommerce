@@ -322,7 +322,6 @@
                         text-decoration: none;
                         text-transform: uppercase;
                         text-align: center;
-                        @include px-for-rem(3, letter-spacing);
                         @include px-for-rem(14, line-height);
                         color: $white;
                         cursor: pointer;
@@ -363,7 +362,7 @@
                     @include transform(translateX(24.25rem));
                     @include px-for-rem(310, width);
                     height: 100vh;
-                    background: #d5d5d5;
+                    background: $ice;
                     z-index: 99;
                 }
 
@@ -378,7 +377,7 @@
                     @include transform(translateX(37.5rem));
                     @include px-for-rem(440, width);
                     height: 110vh;
-                    background: #d5d5d5;
+                    background: $ice;
                     z-index: 99;
                 }
                 ul {
@@ -426,7 +425,8 @@
                 top: 14px;
             }
             a {
-                @include transform(translateY(.375rem));
+                position: relative;
+                @include px-for-rem(5, top);
                 font-family: 'Simonetta', sans-serif;
                 @include px-for-rem(26, font-size);
                 font-weight: bold;
@@ -517,6 +517,7 @@
             position: absolute;
             @include px-for-rem(24, top);
             @include px-for-rem(10, right);
+            cursor: pointer;
 
             @include for-mobile {
                 display: flex !important;
