@@ -77,6 +77,7 @@ const funiture_MiniCarouselHome = () => {
     });
 };
 
+//Function to animate in timeline all page
 const funiture_AnimationTimeline = () => {
     anime.timeline({
         easing: 'easeOutExpo'
@@ -244,6 +245,7 @@ const funiture_AnimationTimeline = () => {
     })
 };
 
+//Function to execute in batch all other function in load of page
 document.addEventListener("DOMContentLoaded", () => {
     funiture_CarouselHome();
     funiture_MiniCarouselHome();

@@ -169,7 +169,7 @@
                         display: flex;
                         width: 100%;
                         @include px-for-rem(40, height);
-                        background: #fff;
+                        background: $white;
                         button {
                             width: 100%;
                             height: 100%;
@@ -212,12 +212,62 @@
         @include transform(translateY(-6.25rem));
         width: 89.4%;
         @include px-for-rem(450, height);
-        background: #fff;
+        background: $white;
+        
+        @include for-mobile {
+            @include px-for-rem(500, height);
+        }
+        h2 {
+            position: relative;
+            @include px-for-rem(100, top);
+            @include px-for-rem(80, left);
+            margin: 0;
+            font-family: 'Simonetta', sans-serif;
+            @include px-for-rem(60, font-size);
+            text-transform: uppercase;
+            color: $black-medium;
+            
+            @include for-mobile {
+                @include px-for-rem(42, left);
+                @include px-for-rem(40, font-size);
+            }
+
+            @include for-tablet {
+                @include px-for-rem(60, left);
+                @include px-for-rem(50, font-size);
+            }
+        }
         &-container {
+            max-width: 90%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 7.4375rem 4rem;
+            margin: 5.4375rem auto;
+            
+            @include for-mobile {
+                display: inherit;
+                margin: 7.4375rem auto;
+            }
+            &__about {
+                @include px-for-rem(30, margin);
+                h3 {
+                    margin-top: 0;
+                    font-family: 'Roboto', sans-serif;
+                    @include px-for-rem(18, font-size);
+                    color: $black-medium;
+                    
+                    @include for-tablet {
+                        @include px-for-rem(16, font-size);
+                    }
+                }
+                
+                p {
+                    font-family: 'Roboto', sans-serif;
+                    @include px-for-rem(14, font-size);
+                    text-align: center;
+                    color: $black-medium;
+                }
+            }
         }
     }
     &__shelf {
@@ -231,7 +281,7 @@
             height: 100%;
             > h2 {
                 position: absolute;
-                @include px-for-rem(-124, top);
+                @include px-for-rem(-310, top);
                 @include px-for-rem(144, right);
                 font-family: 'Roboto', sans-serif;
                 @include px-for-rem(125, font-size);
@@ -240,15 +290,15 @@
 
                 @include for-mobile {
                     margin: 0;
-                    @include px-for-rem(120, top);
+                    @include px-for-rem(140, top);
                     @include px-for-rem(10, right);
                     @include px-for-rem(62, font-size);
                 }
 
                 @include for-tablet {
-                    @include px-for-rem(0, top);
-                    @include px-for-rem(12, right);
-                    @include px-for-rem(68, font-size);
+                    @include px-for-rem(-280, top);
+                    @include px-for-rem(24, right);
+                    @include px-for-rem(100, font-size);
                 }
             }
             > h3 {
@@ -366,12 +416,14 @@
                             position: absolute;
                             @include px-for-rem(20, right);
                             @include px-for-rem(32, bottom);
-                            @include px-for-rem(120, width);
+                            padding: 0 1.125rem;
                             @include px-for-rem(34, height);
                             background: $beige;
                             box-shadow: .1875rem .1875rem .1875rem 0 rgba(0, 0, 0, 0.3);
                             font-family: 'Roboto', sans-serif;
                             @include px-for-rem(12, font-size);
+                            font-weight: bold;
+                            text-transform: uppercase;
                             color: $white;
                             cursor: pointer;
                             &:hover {
@@ -388,12 +440,12 @@
     &__off {
         width: 100%;
         height: auto;
-        background: #fff;
+        background: $white;
         &-product-container {
             display: flex;
             width: 100%;
             @include px-for-rem(300, height);
-            background: #fff;
+            background: $white;
             &__text {
                 display: flex;
                 justify-content: center;
@@ -478,7 +530,7 @@
 
                     @include for-tablet {
                         width: 82%;
-                        @include transform(translateY(2rem) !important);
+                        @include transform(translateY(-3rem) !important);
                     }
                 }
             }
@@ -511,7 +563,7 @@
                         color: #e3e3e3;
 
                         @include for-mobile {
-                            margin: 1.125rem .5rem 0;
+                            margin: 2.125rem .5rem 0;
                             @include px-for-rem(62, font-size);
                         }
                         
@@ -599,12 +651,14 @@
                                     position: absolute;
                                     @include px-for-rem(20, right);
                                     @include px-for-rem(32, bottom);
-                                    @include px-for-rem(120, width);
+                                    padding: 0 1.125rem;
                                     @include px-for-rem(34, height);
                                     background: $beige;
                                     box-shadow: .1875rem .1875rem .1875rem 0 rgba(0, 0, 0, 0.3);
                                     font-family: 'Roboto', sans-serif;
                                     @include px-for-rem(12, font-size);
+                                    font-weight: bold;
+                                    text-transform: uppercase;
                                     color: $white;
                                     cursor: pointer;
                                     &:hover {
@@ -711,7 +765,9 @@
                             border: none;
                             outline: none;
                             font-family: 'Roboto', sans-serif;
-                            @include px-for-rem(14, font-size);
+                            @include px-for-rem(12, font-size);
+                            font-weight: bold;
+                            text-transform: uppercase;
                             color: $white;
                             cursor: pointer;
                             &:hover {
@@ -727,7 +783,7 @@
     &__blog-container {
         display: flex;
         width: 100%;
-        background: #fff;
+        background: $white;
         &-background {
             width: 6%;
             height: auto;
@@ -872,11 +928,13 @@
                                     position: absolute;
                                     @include px-for-rem(16, right);
                                     font-family: 'Roboto', sans-serif;
-                                    @include px-for-rem(14, font-size);
+                                    @include px-for-rem(12, font-size);
                                     padding: 0rem 1rem;
                                     @include px-for-rem(34, height);
+                                    font-weight: bold;
                                     text-align: end;
                                     text-decoration: none;
+                                    text-transform: uppercase;
                                     color: $white;
                                     background: $beige;
                                     box-shadow: .1875rem .1875rem .1875rem 0 rgba(0, 0, 0, 0.3);
