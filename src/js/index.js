@@ -129,19 +129,20 @@ const funiture_AnimationTimeline = () => {
         delay: (el, i) => 700 * i,
         offset: '-=300',
     }).add({
-        targets: '.b-container__promotion-cards h2',
+        targets: '.b-container__decoration-image img',
         opacity: [0, 1],
-        translateX: [-100, 0],
+        translateY: [-100, 0],
         offset: '-=150'
     }).add({
-        targets: '.b-container__promotion-cards-container__about',
+        targets: '.b-container__decoration-text h3',
         opacity: [0, 1],
-        translateX: [-100, 0],
-        offset: '-=150'
+        translateX: [100, 0],
+        offset: '-=250'
     }).add({
-        targets: '.b-container__shelf-content h2',
+        targets: '.b-container__decoration-text h2',
         opacity: [0, 1],
-        translateY: [80, 0],
+        translateX: [100, 0],
+        offset: '-=250'
     }).add({
         targets: '.b-container__shelf-content h3',
         opacity: [0, 1],
@@ -152,6 +153,10 @@ const funiture_AnimationTimeline = () => {
         opacity: [0, 1],
         translateY: [80, 0],
         offset: '-=300',
+    }).add({
+        targets: '.b-container__shelf-content h2',
+        opacity: [0, 1],
+        translateY: [80, 0],
     }).add({
         targets: '.b-container__shelf-content__row-product',
         opacity: [0, 1],
