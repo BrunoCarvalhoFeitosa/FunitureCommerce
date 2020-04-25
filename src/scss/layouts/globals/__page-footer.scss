@@ -12,8 +12,9 @@
         position: absolute;
         @include px-for-rem(0, bottom);
         @include px-for-rem(0, right);
-        @include px-for-rem(460, width);
+        @include px-for-rem(488, width);
         @include filter(drop-shadow(.275rem 1rem .075rem $gray-lighter));
+        opacity: 0.2;
         z-index: 9;
         
         @include for-mobile {
@@ -28,7 +29,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        @include transform(translateX(-7.2625rem));
+        @include transform(translateX(-9.2625rem));
         
         @include for-mobile {
             display: inline;
@@ -84,7 +85,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 70%;
+        width: 82%;
         h6 {
             @include transform(translateX(-3.8625rem));
             
